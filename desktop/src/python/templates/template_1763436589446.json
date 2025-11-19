@@ -1,0 +1,23 @@
+{
+  "template_id": "template_1763436589446",
+  "cache_name": "cache_lease_02_UNREDACTED.pdf",
+  "description": "lease_02_UNREDACTED.pdf",
+  "regions": [
+    {
+      "id": "region_1763436584888",
+      "bbox": [
+        80.5,
+        327,
+        162,
+        44
+      ],
+      "field_name": "email",
+      "entity_type": "EMAIL_ADDRESS",
+      "confidence": 0.9,
+      "user_label": "email"
+    }
+  ],
+  "created_at": "2025-11-18T03:29:49.446Z",
+  "expires_at": "2025-11-18T04:29:49.446Z",
+  "voice_command": "Manual annotation"
+}

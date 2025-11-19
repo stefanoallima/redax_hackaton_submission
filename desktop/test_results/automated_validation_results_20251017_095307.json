@@ -1,0 +1,501 @@
+{
+  "timestamp": "20251017_095307",
+  "metrics": {
+    "total_tests": 27,
+    "passed": 26,
+    "failed": 1,
+    "accuracy": 0.9629629629629629,
+    "precision": 1.0,
+    "recall": 0.9375,
+    "f1_score": 0.967741935483871,
+    "true_positives": 15,
+    "false_negatives": 1,
+    "true_negatives": 11,
+    "false_positives": 0,
+    "critical_tests": 7,
+    "critical_passed": 7,
+    "critical_failed": 0
+  },
+  "results": [
+    {
+      "test_id": "A1-1",
+      "category": "Simple Names",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "Mario Rossi",
+          "start": 26,
+          "end": 37,
+          "score": 0.85,
+          "source": "SpacyRecognizer"
+        }
+      ],
+      "expected_entities": [
+        "Mario Rossi"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['Mario Rossi'], Detected: ['Mario Rossi']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A1-2",
+      "category": "Simple Names",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "Anna Verdi",
+          "start": 11,
+          "end": 21,
+          "score": 0.85,
+          "source": "SpacyRecognizer"
+        }
+      ],
+      "expected_entities": [
+        "Anna Verdi"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['Anna Verdi'], Detected: ['Anna Verdi']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A2-1",
+      "category": "ALL CAPS Names",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "MARIO ROSSI",
+          "start": 0,
+          "end": 11,
+          "score": 1.0,
+          "source": "SpacyRecognizer",
+          "context_boost": true
+        }
+      ],
+      "expected_entities": [
+        "MARIO ROSSI"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['MARIO ROSSI'], Detected: ['MARIO ROSSI']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A2-2",
+      "category": "ALL CAPS Names",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "GIOVANNI BIANCHI",
+          "start": 0,
+          "end": 16,
+          "score": 1.0,
+          "source": "SpacyRecognizer",
+          "context_boost": true
+        }
+      ],
+      "expected_entities": [
+        "GIOVANNI BIANCHI"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['GIOVANNI BIANCHI'], Detected: ['GIOVANNI BIANCHI']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A3-1-REGRESSION",
+      "category": "Apostrophe Names (Title Case)",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "Marco Dell'Utri",
+          "start": 0,
+          "end": 15,
+          "score": 0.85,
+          "source": "SpacyRecognizer"
+        }
+      ],
+      "expected_entities": [
+        "Marco Dell'Utri"
+      ],
+      "detected_count": 1,
+      "details": "Expected: [\"Marco Dell'Utri\"], Detected: [\"Marco Dell'Utri\"]",
+      "critical": true,
+      "note": "KNOWN REGRESSION - User reported this stopped working"
+    },
+    {
+      "test_id": "A3-2",
+      "category": "Apostrophe Names (Title Case)",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "Pasquale D'Ascola",
+          "start": 0,
+          "end": 17,
+          "score": 1.0,
+          "source": "SpacyRecognizer",
+          "context_boost": true
+        }
+      ],
+      "expected_entities": [
+        "Pasquale D'Ascola"
+      ],
+      "detected_count": 1,
+      "details": "Expected: [\"Pasquale D'Ascola\"], Detected: [\"Pasquale D'Ascola\"]",
+      "critical": true,
+      "note": ""
+    },
+    {
+      "test_id": "A3-3",
+      "category": "Apostrophe Names (Title Case)",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "Giovanni D'Angelo",
+          "start": 0,
+          "end": 17,
+          "score": 0.85,
+          "source": "SpacyRecognizer"
+        }
+      ],
+      "expected_entities": [
+        "Giovanni D'Angelo"
+      ],
+      "detected_count": 1,
+      "details": "Expected: [\"Giovanni D'Angelo\"], Detected: [\"Giovanni D'Angelo\"]",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A4-1",
+      "category": "Apostrophe Names (ALL CAPS)",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "MARCO DELL'UTRI",
+          "start": 0,
+          "end": 15,
+          "score": 0.85,
+          "source": "SpacyRecognizer"
+        }
+      ],
+      "expected_entities": [
+        "MARCO DELL'UTRI"
+      ],
+      "detected_count": 1,
+      "details": "Expected: [\"MARCO DELL'UTRI\"], Detected: [\"MARCO DELL'UTRI\"]",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A4-2",
+      "category": "Apostrophe Names (ALL CAPS)",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "PASQUALE D'ASCOLA",
+          "start": 0,
+          "end": 17,
+          "score": 0.85,
+          "source": "SpacyRecognizer"
+        }
+      ],
+      "expected_entities": [
+        "PASQUALE D'ASCOLA"
+      ],
+      "detected_count": 1,
+      "details": "Expected: [\"PASQUALE D'ASCOLA\"], Detected: [\"PASQUALE D'ASCOLA\"]",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A5-1",
+      "category": "Names in Strong Context",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "Mario Rossi",
+          "start": 16,
+          "end": 27,
+          "score": 1.0,
+          "source": "SpacyRecognizer",
+          "context_boost": true
+        }
+      ],
+      "expected_entities": [
+        "Mario Rossi"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['Mario Rossi'], Detected: ['Mario Rossi']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A6-1",
+      "category": "Italian Document IDs",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "RSSMRA85C15H501X",
+          "start": 16,
+          "end": 32,
+          "score": 1.0,
+          "source": "SpacyRecognizer",
+          "context_boost": true
+        }
+      ],
+      "expected_entities": [
+        "RSSMRA85C15H501X"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['RSSMRA85C15H501X'], Detected: ['RSSMRA85C15H501X']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A6-2",
+      "category": "Italian Document IDs",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "LOCATION",
+          "text": "FI1234567A",
+          "start": 18,
+          "end": 28,
+          "score": 0.85,
+          "source": "SpacyRecognizer"
+        }
+      ],
+      "expected_entities": [
+        "FI1234567A"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['FI1234567A'], Detected: ['FI1234567A']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A7-1",
+      "category": "Contact Information",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "EMAIL_ADDRESS",
+          "text": "mario.rossi@example.com",
+          "start": 7,
+          "end": 30,
+          "score": 1.0,
+          "source": "EmailRecognizer",
+          "context_boost": true
+        }
+      ],
+      "expected_entities": [
+        "mario.rossi@example.com"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['mario.rossi@example.com'], Detected: ['mario.rossi@example.com']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A7-2",
+      "category": "Contact Information",
+      "passed": false,
+      "detected_entities": [
+        {
+          "entity_type": "PERSON",
+          "text": "Telefono",
+          "start": 0,
+          "end": 8,
+          "score": 1.0,
+          "source": "SpacyRecognizer",
+          "context_boost": true
+        }
+      ],
+      "expected_entities": [
+        "+39 333 1234567"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['+39 333 1234567'], Detected: ['Telefono']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A8-1",
+      "category": "ALL CAPS Emails",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "EMAIL_ADDRESS",
+          "text": "MARIO.ROSSI@EXAMPLE.COM",
+          "start": 0,
+          "end": 23,
+          "score": 1.0,
+          "source": "EmailRecognizer"
+        }
+      ],
+      "expected_entities": [
+        "MARIO.ROSSI@EXAMPLE.COM"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['MARIO.ROSSI@EXAMPLE.COM'], Detected: ['MARIO.ROSSI@EXAMPLE.COM']",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "A11-1-USER-REPORTED",
+      "category": "Emails with Prefixes",
+      "passed": true,
+      "detected_entities": [
+        {
+          "entity_type": "EMAIL_ADDRESS",
+          "text": "avv.gabrielecatarinacci@pec.it",
+          "start": 0,
+          "end": 30,
+          "score": 1.0,
+          "source": "EmailRecognizer"
+        }
+      ],
+      "expected_entities": [
+        "avv.gabrielecatarinacci@pec.it"
+      ],
+      "detected_count": 1,
+      "details": "Expected: ['avv.gabrielecatarinacci@pec.it'], Detected: ['avv.gabrielecatarinacci@pec.it']",
+      "critical": true,
+      "note": "USER REPORTED - Email with prefix not detected"
+    },
+    {
+      "test_id": "B1-1-FIXED",
+      "category": "Job Titles (False Positive Fix)",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": true,
+      "note": "Previously FALSE POSITIVE - Should be fixed by deny list"
+    },
+    {
+      "test_id": "B1-2-FIXED",
+      "category": "Job Titles (False Positive Fix)",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": true,
+      "note": ""
+    },
+    {
+      "test_id": "B2-1-FIXED",
+      "category": "Organizational Terms (False Positive Fix)",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": true,
+      "note": "Previously FALSE POSITIVE - Should be fixed by deny list"
+    },
+    {
+      "test_id": "B3-1-FIXED",
+      "category": "Document Labels (False Positive Fix)",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": true,
+      "note": "Previously FALSE POSITIVE - Should be fixed by deny list"
+    },
+    {
+      "test_id": "B3-2-FIXED",
+      "category": "Document Labels (False Positive Fix)",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "B4-1",
+      "category": "Legal Institutions",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "B4-2",
+      "category": "Legal Institutions",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "B5-1",
+      "category": "Government Agencies",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "B5-2",
+      "category": "Government Agencies",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "B7-1",
+      "category": "Legal References",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": false,
+      "note": ""
+    },
+    {
+      "test_id": "C1-1",
+      "category": "Invalid Document IDs",
+      "passed": true,
+      "detected_entities": [],
+      "expected_entities": [],
+      "detected_count": 0,
+      "details": "Expected: NO DETECTION, Detected: NONE",
+      "critical": false,
+      "note": "Invalid checksum - should NOT detect"
+    }
+  ]
+}

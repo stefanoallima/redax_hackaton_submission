@@ -1,0 +1,165 @@
+{
+  "old_config": {
+    "config_name": "Old Configuration (Problematic)",
+    "config_params": {
+      "enable_gliner": true,
+      "use_multi_model": false,
+      "enable_prefilter": true,
+      "enable_italian_context": true,
+      "enable_entity_thresholds": true
+    },
+    "init_time": 0.0,
+    "detect_time": 13.025644779205322,
+    "total_entities": 17,
+    "true_positives": 6,
+    "false_positives": 5,
+    "false_negatives": 2,
+    "precision": 0.5454545454545454,
+    "recall": 0.75,
+    "f1": 0.631578947368421,
+    "per_entity_metrics": {
+      "PERSON": {
+        "true_positives": 2,
+        "false_positives": 4,
+        "false_negatives": 0,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5,
+        "detected_count": 8,
+        "expected_count": 2
+      },
+      "EMAIL_ADDRESS": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "detected_count": 2,
+        "expected_count": 2
+      },
+      "IT_FISCAL_CODE": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "detected_count": 1,
+        "expected_count": 1
+      },
+      "ADDRESS": {
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0,
+        "detected_count": 1,
+        "expected_count": 1
+      },
+      "PHONE_NUMBER": {
+        "true_positives": 0,
+        "false_positives": 0,
+        "false_negatives": 1,
+        "precision": 0,
+        "recall": 0.0,
+        "f1": 0,
+        "detected_count": 0,
+        "expected_count": 1
+      },
+      "IBAN": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "detected_count": 2,
+        "expected_count": 1
+      }
+    }
+  },
+  "new_config": {
+    "config_name": "New Configuration (Optimized)",
+    "config_params": {
+      "enable_gliner": true,
+      "use_multi_model": true,
+      "enable_prefilter": true,
+      "enable_italian_context": true,
+      "enable_entity_thresholds": false
+    },
+    "init_time": 0.0005118846893310547,
+    "detect_time": 31.42586874961853,
+    "total_entities": 21,
+    "true_positives": 6,
+    "false_positives": 6,
+    "false_negatives": 2,
+    "precision": 0.5,
+    "recall": 0.75,
+    "f1": 0.6,
+    "per_entity_metrics": {
+      "PERSON": {
+        "true_positives": 1,
+        "false_positives": 5,
+        "false_negatives": 1,
+        "precision": 0.16666666666666666,
+        "recall": 0.5,
+        "f1": 0.25,
+        "detected_count": 7,
+        "expected_count": 2
+      },
+      "EMAIL_ADDRESS": {
+        "true_positives": 2,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "detected_count": 2,
+        "expected_count": 2
+      },
+      "IT_FISCAL_CODE": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "detected_count": 1,
+        "expected_count": 1
+      },
+      "ADDRESS": {
+        "true_positives": 0,
+        "false_positives": 1,
+        "false_negatives": 1,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0,
+        "detected_count": 1,
+        "expected_count": 1
+      },
+      "PHONE_NUMBER": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "detected_count": 1,
+        "expected_count": 1
+      },
+      "IBAN": {
+        "true_positives": 1,
+        "false_positives": 0,
+        "false_negatives": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "detected_count": 2,
+        "expected_count": 1
+      }
+    }
+  },
+  "timestamp": "2025-11-14 17:17:08"
+}

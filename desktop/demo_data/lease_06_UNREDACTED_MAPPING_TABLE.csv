@@ -1,0 +1,7 @@
+Original Text,Placeholder,Entity Type
+james.harris@email.com,[EML1----------------],EMAIL_ADDRESS
+(415) 555-6819,[TEL1--------],PHONE_NUMBER
+James Harris,[PER1------],PERSON
+michelle.white@email.com,[EML2------------------],EMAIL_ADDRESS
+(415) 555-7782,[TEL2--------],PHONE_NUMBER
+Michelle White,[PER2--------],PERSON

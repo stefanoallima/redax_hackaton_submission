@@ -1,0 +1,106 @@
+{
+  "name": "redaxai-redact",
+  "version": "1.0.0",
+  "description": "Offline PII redaction tool for Italian legal documents",
+  "main": "dist/electron/electron/main.js",
+  "author": "redaxai.com",
+  "license": "Proprietary",
+  "private": true,
+  "scripts": {
+    "cleanup": "node -e \"console.log('Use cleanup:win or cleanup:unix')\"",
+    "cleanup:win": "powershell -ExecutionPolicy Bypass -File ./scripts/cleanup-ports.ps1",
+    "cleanup:unix": "bash ./scripts/cleanup-ports.sh",
+    "preelectron:dev": "npm run cleanup:win",
+    "electron:dev": "concurrently \"npm run dev:renderer\" \"npm run dev:electron\"",
+    "dev:renderer": "vite",
+    "dev:electron": "tsc -p tsconfig.electron.json && electron .",
+    "build": "npm run build:renderer && npm run build:electron",
+    "build:renderer": "vite build",
+    "build:electron": "tsc -p tsconfig.electron.json",
+    "electron:build:win": "electron-builder --win",
+    "electron:build:mac": "electron-builder --mac",
+    "lint": "eslint src --ext .ts,.tsx",
+    "test": "vitest",
+    "pretest:e2e": "npm run cleanup:win",
+    "test:e2e": "npm run build && playwright test",
+    "test:e2e:headed": "npm run build && playwright test --headed",
+    "test:e2e:ui": "npm run build && playwright test --ui",
+    "test:e2e:debug": "npm run build && playwright test --debug"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "clsx": "^2.1.0",
+    "electron-store": "^8.1.0",
+    "lucide-react": "^0.312.0",
+    "pdfjs-dist": "^5.4.296",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-pdf": "^10.2.0",
+    "react-router-dom": "^6.21.0",
+    "tailwind-merge": "^2.2.0",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "autoprefixer": "^10.4.0",
+    "concurrently": "^8.2.0",
+    "electron": "^28.1.0",
+    "electron-builder": "^24.9.0",
+    "electron-updater": "^6.1.0",
+    "eslint": "^8.0.0",
+    "playwright": "^1.56.0",
+    "playwright-electron": "^0.5.0",
+    "postcss": "^8.4.0",
+    "tailwindcss": "^3.4.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vitest": "^1.2.0"
+  },
+  "build": {
+    "appId": "com.redaxai.redact",
+    "productName": "Redax AI",
+    "directories": {
+      "output": "dist/installers",
+      "buildResources": "assets"
+    },
+    "files": [
+      "dist/**/*",
+      "src/python/**/*",
+      "!src/python/venv_gliner/**/*",
+      "!src/python/__pycache__/**/*",
+      "!src/python/**/__pycache__/**/*",
+      "!src/python/test*.py",
+      "!src/python/input/**/*",
+      "!src/python/output/**/*",
+      "!src/python/inpoutput/**/*",
+      "!src/python/processed/**/*"
+    ],
+    "asarUnpack": [
+      "src/python/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/icon.ico",
+      "publisherName": "redaxai.com"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "assets/icon.icns",
+      "category": "public.app-category.productivity"
+    }
+  }
+}

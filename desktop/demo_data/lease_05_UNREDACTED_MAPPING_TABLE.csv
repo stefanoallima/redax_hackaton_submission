@@ -1,0 +1,7 @@
+Original Text,Placeholder,Entity Type
+matthew.williams@email.com,[EML1--------------------],EMAIL_ADDRESS
+(415) 555-7655,[TEL1--------],PHONE_NUMBER
+Matthew Williams,[PER1----------],PERSON
+christopher.thomas@email.com,[EML2----------------------],EMAIL_ADDRESS
+(415) 555-2825,[TEL2--------],PHONE_NUMBER
+Christopher Thomas,[PII1------------],MANUAL

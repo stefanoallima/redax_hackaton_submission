@@ -1,0 +1,30 @@
+# Web Application Requirements
+# Includes Gradio + all shared_backend dependencies
+
+# Gradio web framework
+gradio==4.16.0
+
+# Include all shared backend dependencies
+# (Copy from ../shared_backend/requirements.txt)
+
+# Core ML/NLP
+presidio-analyzer==2.2.354
+presidio-anonymizer==2.2.354
+spacy==3.7.2
+gliner==0.2.0
+torch==2.1.0
+
+# Gemini API
+google-generativeai==0.8.0
+
+# PDF Processing
+PyMuPDF==1.23.0
+Pillow==10.0.0
+pdfplumber==0.9.0
+
+# Document Processing
+python-docx==0.8.11
+
+# Utilities
+python-dotenv==1.0.0
+numpy>=1.24.0

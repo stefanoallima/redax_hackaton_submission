@@ -1,0 +1,16 @@
+VERIFICATION TEST RESULTS - Optimized Configuration
+================================================================================
+
+Configuration:
+  - GLiNER: ENABLED (Italian + Multilingual)
+  - Prefilter: ENABLED
+  - Italian Context: ENABLED
+  - Entity Thresholds: DISABLED (root cause fix)
+
+Overall F1 Score: 12.37%
+Overall Precision: 7.59%
+Overall Recall: 33.33%
+
+True Positives: 6
+False Negatives: 9
+False Positives: 24

@@ -1,0 +1,156 @@
+Original Text,Placeholder,Entity Type
+Page,████,PERSON
+Bologna,[LOC1-],LOCATION
+Università di Bologna,[LOC2---------------],LOCATION
+Luca Cervone,[PER2------],PERSON
+Legal,[P3-],PERSON
+F,█,LOCATION
+Luca,████,LOCATION
+Cervone,[PER4-],PERSON
+NIR,███,LOCATION
+Solidity,[LOC6--],LOCATION
+Deno,████,LOCATION
+Ingegneria,[LOC8----],LOCATION
+Metalex,[LOC9-],LOCATION
+Tecnologie,[LOC10---],LOCATION
+DISI,████,LOCATION
+eDemocracy,[LOC12---],LOCATION
+Sistemi Deliberativi,[PER5--------------],PERSON
+Dipartimento di Informatica,[LOC13--------------------],LOCATION
+Università Di Bologna,[LOC14--------------],LOCATION
+Strumenti,[LOC15--],LOCATION
+Contratti Ricardiani,[PER6--------------],PERSON
+"Via di Corticella 133, 40128",[ADR1----------------------],IT_ADDRESS
+Sede di Bologna,[LOC16--------],LOCATION
+Sistemi Deliberativi,[LOC17-------------],LOCATION
+Golang,[PER7],PERSON
+RUST,████,LOCATION
+Agro Environment,[LOC19---------],LOCATION
+Chief Technology Officer,[PER8------------------],PERSON
+Scienza,[LOC20],LOCATION
+Bias Cognitivi,[LOC21-------],LOCATION
+California,[LOC22---],LOCATION
+università di Bologna,[LOC23--------------],LOCATION
+Università d Bologna,[LOC24-------------],LOCATION
+Intergovernativi,[PER9----------],PERSON
+Fabio Vitali,[PER10-----],PERSON
+Monica Palmirani,[PER11---------],PERSON
+Akoma Ntoso,[PER12----],PERSON
+USA,███,LOCATION
+Monica,[P13-],PERSON
+Palmirani,[PER14--],PERSON
+"7 Via Mura Anteo Zamboni, 40126",[ADR2-------------------------],IT_ADDRESS
+LEX Summer School,[LOC26----------],LOCATION
+www.cirsfid.unibo.it,[PER15-------------],PERSON
+"3 Via Galliera, 40100",[ADR3---------------],IT_ADDRESS
+"7 
+Via Mura Anteo Zamboni, 40126",[ADR4--------------------------],IT_ADDRESS
+Prof Fabio Vitali,[PER16----------],PERSON
+Tutor,[L27],LOCATION
+Editor Parametrici,[PER17-----------],PERSON
+Amministrazioni,[LOC28--------],LOCATION
+Italy,[L29],LOCATION
+"Via Fanin 48, 40129",[ADR5-------------],IT_ADDRESS
+Prof Angelo Di Iorio,[PER18-------------],PERSON
+Dipartimento di Informatica Scienza,[LOC30----------------------------],LOCATION
+CA 94305,[LOC31-],LOCATION
+CA 94305-8610,[LOC32------],LOCATION
+"549 Via Bologna, Ferrara, 44124",[ADR6-------------------------],IT_ADDRESS
+Bertinoro,[LOC33--],LOCATION
+"7 Via Mura Anteo Zamboni, Bologna, 40126",[ADR7----------------------------------],IT_ADDRESS
+Prof Ozalp Babaoglu,[PER19------------],PERSON
+"Università di 
+Bertinoro",[LOC34-----------------],LOCATION
+"4 Via Dei Gotti, Budrio, Bologna, 40054",[ADR8---------------------------------],IT_ADDRESS
+Vitali Rappresentanze,[PER20--------------],PERSON
+Ravenna,[LOC35],LOCATION
+December,[PER21-],PERSON
+Marc,████,PERSON
+Via Marconi,[LOC36----],LOCATION
+"Liceo Scientifico
+Liceo Scientifico G. De Rogatis",[LOC37------------------------------------------],LOCATION
+"22 Via Mura Anteo Zamboni, 40126",[ADR9--------------------------],IT_ADDRESS
+Multimidia,[LOC38---],LOCATION
+Serra Mall,[LOC39---],LOCATION
+Margaret Jacks Hall,[PER23------------],PERSON
+Bootstrap,[PER24--],PERSON
+LegalRuleML,[LOC40----],LOCATION
+Typescrypt,[PER25---],PERSON
+XPath,[L41],LOCATION
+"Luca Cervone
+Madre Lingua
+Italiano",[PER26---------------------------],PERSON
+Springer,[LOC42-],LOCATION
+Amsterdam,[LOC43--],LOCATION
+Rotterdam,[LOC44--],LOCATION
+Vitali F.,[PER27--],PERSON
+Peroni,[P28-],PERSON
+Palmirani M.,[PER29-----],PERSON
+Cervone L.,[PER30---],PERSON
+Barabucci G.,[PER31-----],PERSON
+NY,██,LOCATION
+NEW YORK,[LOC46-],LOCATION
+F. Vitali,[PER32--],PERSON
+L. Cervone,[PER33---],PERSON
+M. Palmirani,[PER34-----],PERSON
+Montreal,[LOC47-],LOCATION
+Di Iorio A.,[PER35----],PERSON
+August,[P36-],PERSON
+Toulouse,[LOC48-],LOCATION
+L Cervone,[PER37--],PERSON
+F Vitali,[LOC49-],LOCATION
+M Palmirani,[LOC50----],LOCATION
+Springer Netherlands,[PER38-------------],PERSON
+France,[L51-],LOCATION
+Montpellier,[LOC52----],LOCATION
+Vol-874,[LOC53],LOCATION
+Ognibene T.,[PER39----],PERSON
+JURIX-DoCoPe-2013,[PER40----------],PERSON
+Octavian Bujor,[PER41-------],PERSON
+Bari,████,LOCATION
+Heidelberg,[LOC55---],LOCATION
+SPRINGER Berlin,[LOC56--------],LOCATION
+Monica Palmirani;Luca Cervone,[PER42----------------------],PERSON
+Springer Berlin,[PER43--------],PERSON
+Luxembourg,[LOC57---],LOCATION
+Giovanni,[PER44-],PERSON
+Siragusa,[PER45-],PERSON
+Luigi,[P46],PERSON
+Di Caro,[PER47],PERSON
+Alberto,[PER48],PERSON
+Boada García,[PER49-----],PERSON
+Arsuaga Lecuona,[PER50--------],PERSON
+Octavian,[LOC58-],LOCATION
+Bujor,[L59],LOCATION
+Jos,███,LOCATION
+"van den 
+Oever",[PER51-------],PERSON
+van Opijnen,[PER52----],PERSON
+Ginevra,[LOC61],LOCATION
+Peruginelli,[PER53----],PERSON
+Lorenzo,[PER54],PERSON
+Bacci,[P55],PERSON
+Tommaso,[PER56],PERSON
+Agnoloni,[PER57-],PERSON
+Springer,[PER58-],PERSON
+Francesco Draicchio,[PER59------------],PERSON
+Ilaria Bianchi,[PER60-------],PERSON
+Dipartimento di Lingue,[LOC62---------------],LOCATION
+02/04/2014,[DAT1----],DATE_TIME
+Docente Prof,[PER61-----],PERSON
+– Seminario,[PER62----],PERSON
+24/04/2014,[DAT2----],DATE_TIME
+26/03/2014,[DAT3----],DATE_TIME
+27/03/2014,[DAT4----],DATE_TIME
+26/02/2015,[DAT5----],DATE_TIME
+04/03/2015,[DAT6----],DATE_TIME
+05/03/2015,[DAT7----],DATE_TIME
+18/03/2015,[DAT8----],DATE_TIME
+26/03/2015,[DAT9----],DATE_TIME
+28/04/2015,[DAT10---],DATE_TIME
+07/04/2016,[DAT11---],DATE_TIME
+21/04/2016,[DAT12---],DATE_TIME
+Scuola di Giurisprudenza,[LOC63-----------------],LOCATION
+27/11/2019,[DAT13---],DATE_TIME
+"Luca Cervone
+Aggiornato",[PER63----------------],PERSON
