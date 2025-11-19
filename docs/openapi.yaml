@@ -1,8 +1,8 @@
 openapi: 3.0.3
 info:
-  title: CodiceCivile.ai API
+  title: RedaxAI API
   description: |
-    REST API for the CodiceCivile.ai platform providing semantic search,
+    REST API for the RedaxAIf platform providing semantic search,
     AI-powered chat, and legal article management.
 
     **Features:**
@@ -12,15 +12,15 @@ info:
     - Vector embeddings for similarity search
   version: 1.0.0
   contact:
-    name: CodiceCivile.ai Support
-    email: support@codicecivile.ai
+    name: RedaxAI Support
+    email: support@RedaxAI
   license:
     name: Proprietary
 
 servers:
-  - url: https://api.codicecivile.ai/v1
+  - url: https://api.RedaxAI/v1
     description: Production server
-  - url: https://staging-api.codicecivile.ai/v1
+  - url: https://staging-api.RedaxAI/v1
     description: Staging server
   - url: http://localhost:8000/v1
     description: Local development server
