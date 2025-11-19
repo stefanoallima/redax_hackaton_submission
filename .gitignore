@@ -12,6 +12,7 @@ venv_*/
 env/
 ENV/
 .venv
+.env
 
 # Build outputs
 dist/
