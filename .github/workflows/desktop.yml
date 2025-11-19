@@ -1,0 +1,80 @@
+name: Desktop App CI
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'desktop/**'
+      - '.github/workflows/desktop.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'desktop/**'
+
+jobs:
+  test:
+    runs-on: ${{ matrix.os }}
+    
+    strategy:
+      matrix:
+        os: [windows-latest]  # Add macos-latest, ubuntu-latest for multi-platform
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: desktop/package-lock.json
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: Install Node dependencies
+        working-directory: ./desktop
+        run: npm ci
+      
+      - name: Install Python dependencies
+        working-directory: ./desktop/src/python
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run linting
+        working-directory: ./desktop
+        run: npm run lint
+      
+      - name: Run tests
+        working-directory: ./desktop
+        run: npm run test
+      
+      - name: Build app (Windows)
+        if: matrix.os == 'windows-latest'
+        working-directory: ./desktop
+        run: npm run electron:build:win
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Upload artifacts
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-artifact@v3
+        with:
+          name: desktop-installers
+          path: |
+            desktop/dist/installers/*.exe
+            desktop/dist/installers/*.dmg
+            desktop/dist/installers/*.AppImage
+
+  # TODO: Add release workflow for tagged versions
+  # release:
+  #   needs: test
+  #   if: startsWith(github.ref, 'refs/tags/v')
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Create GitHub Release
+  #     - name: Upload installers to release

@@ -1,0 +1,41 @@
+(venv) (base) PS C:\Users\tucan\Documents\stefano\hackaton\huggingface_gradio\codicecivileai\desktop> set USE_NEW_PII_DETECTOR=true
+(venv) (base) PS C:\Users\tucan\Documents\stefano\hackaton\huggingface_gradio\codicecivileai\desktop> npm run electron:dev
+
+> codicecivile-redact@1.0.0 preelectron:dev
+> npm run cleanup:win
+
+
+> codicecivile-redact@1.0.0 cleanup:win
+> powershell -ExecutionPolicy Bypass -File ./scripts/cleanup-ports.ps1
+
+Cleaning up development servers...
+Checking port 5173...
+  Port 5173 is free
+Checking port 5174...
+  Port 5174 is free
+Checking port 5175...
+  Port 5175 is free
+Checking port 5176...
+  Port 5176 is free
+Checking port 5177...
+  Port 5177 is free
+Checking port 5178...
+  Port 5178 is free
+Checking port 5179...
+  Port 5179 is free
+
+Cleaning up electron and vite processes...
+  Stopping node (PID: 5748)
+  Stopping node (PID: 8240)
+  Stopping node (PID: 12048)
+  Stopping node (PID: 12300)
+  Stopping node (PID: 13908)
+(venv) (base) PS C:\Users\tucan\Documents\stefano\hackaton\huggingface_gradio\codicecivileai\desktop>   Stopping node (PID: 25488)
+  Stopping node (PID: 36796)
+  Stopping node (PID: 37092)
+
+Cleanup complete!
+You can now run: npm run electron:dev
+
+(venv) (base) PS C:\Users\tucan\Documents\stefano\hackaton\huggingface_gradio\codicecivileai\desktop>
+(venv) (base) PS C:\Users\tucan\Documents\stefano\hackaton\huggingface_gradio\codicecivileai\desktop>

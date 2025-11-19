@@ -1,0 +1,1845 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\playwright.config.ts",
+    "rootDir": "C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/codicecivileai/desktop/e2e",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/codicecivileai/desktop/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "electron",
+        "name": "electron",
+        "testDir": "C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/codicecivileai/desktop/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.e2e.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "app.e2e.ts",
+      "file": "app.e2e.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Desktop App - End to End Tests",
+          "file": "app.e2e.ts",
+          "line": 38,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should launch the application",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 116,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:24.261Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-8ce2ba240346e5ee74da",
+              "file": "app.e2e.ts",
+              "line": 40,
+              "column": 7
+            },
+            {
+              "title": "should display the home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 77,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:26.354Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-cda7eeacdad9a798f1a4",
+              "file": "app.e2e.ts",
+              "line": 48,
+              "column": 7
+            },
+            {
+              "title": "should show settings page when clicking settings",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5179,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Settings, text=Preferences')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Settings, text=Preferences')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Settings, text=Preferences')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Settings, text=Preferences')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts:65:69",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                          "column": 69,
+                          "line": 65
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[90m// Verify settings page loaded\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Settings, text=Preferences'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m     }\n \u001b[90m 67 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 68 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                            "column": 69,
+                            "line": 65
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Settings, text=Preferences')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Settings, text=Preferences')\u001b[22m\n\n\n  63 |\n  64 |       // Verify settings page loaded\n> 65 |       await expect(page.locator('text=Settings, text=Preferences')).toBeVisible({ timeout: 5000 });\n     |                                                                     ^\n  66 |     }\n  67 |   });\n  68 |\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts:65:69"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:26.475Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Desktop-App---E-bc86f-page-when-clicking-settings-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Desktop-App---E-bc86f-page-when-clicking-settings-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                        "column": 69,
+                        "line": 65
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-6a136c966504fa36a607",
+              "file": "app.e2e.ts",
+              "line": 58,
+              "column": 7
+            },
+            {
+              "title": "should upload and process a document",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                        "line": 81,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 250,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:38.357Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                            "line": 81,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "754193c309f7a138fd59-5a0e80c7d5eca6f61db1",
+              "file": "app.e2e.ts",
+              "line": 69,
+              "column": 7
+            },
+            {
+              "title": "should display detected PII entities",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 23,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:40.848Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-d22e7139eca6c5a6aea8",
+              "file": "app.e2e.ts",
+              "line": 100,
+              "column": 7
+            },
+            {
+              "title": "should accept all entities",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 16,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:40.960Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-0cbf52eecbde67ac1dba",
+              "file": "app.e2e.ts",
+              "line": 115,
+              "column": 7
+            },
+            {
+              "title": "should reject all entities",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 39,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:41.024Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-913acd9537f1707b5879",
+              "file": "app.e2e.ts",
+              "line": 130,
+              "column": 7
+            },
+            {
+              "title": "should export redacted PDF",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 18,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:41.104Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-7abb8fd85adce2116ae5",
+              "file": "app.e2e.ts",
+              "line": 145,
+              "column": 7
+            },
+            {
+              "title": "should navigate back to home page",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 90,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:41.152Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-e9cfe60723636fb42f91",
+              "file": "app.e2e.ts",
+              "line": 173,
+              "column": 7
+            },
+            {
+              "title": "should show keyboard shortcuts help",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 43,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:41.283Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-2661a25663d3c66ac0de",
+              "file": "app.e2e.ts",
+              "line": 184,
+              "column": 7
+            },
+            {
+              "title": "should handle file drag and drop",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 221,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Drag-drop UI interaction tested\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:41.379Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-adbf31dc82e77badc6ce",
+              "file": "app.e2e.ts",
+              "line": 195,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Performance Tests",
+          "file": "app.e2e.ts",
+          "line": 221,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should load home page quickly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 136,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Page load time: 125ms\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:41.651Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-2518f808a71f9af503df",
+              "file": "app.e2e.ts",
+              "line": 223,
+              "column": 7
+            },
+            {
+              "title": "should handle large documents efficiently",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                        "line": 238,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 13,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:41.834Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                            "line": 238,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "754193c309f7a138fd59-3d60df1e72438ad7e336",
+              "file": "app.e2e.ts",
+              "line": 236,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Error Handling",
+          "file": "app.e2e.ts",
+          "line": 242,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should handle invalid file uploads gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 15,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:41.891Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-447321a885cf992dfb0a",
+              "file": "app.e2e.ts",
+              "line": 244,
+              "column": 7
+            },
+            {
+              "title": "should show error when Python backend is unavailable",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                        "line": 260,
+                        "column": 10
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 6,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:41.965Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                            "line": 260,
+                            "column": 10
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "754193c309f7a138fd59-694242360f111cbd65e1",
+              "file": "app.e2e.ts",
+              "line": 258,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "Accessibility Tests",
+          "file": "app.e2e.ts",
+          "line": 264,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should have proper ARIA labels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 193,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:42.013Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-84b9d915d6ccf7524684",
+              "file": "app.e2e.ts",
+              "line": 266,
+              "column": 7
+            },
+            {
+              "title": "should support keyboard navigation",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 186,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:42.273Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-cf9bf1568fbd88c8d915",
+              "file": "app.e2e.ts",
+              "line": 280,
+              "column": 7
+            },
+            {
+              "title": "should have sufficient color contrast",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 1887,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: accessibility-check.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(accessibility-check.png)\" with timeout 10000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: accessibility-check.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(accessibility-check.png)\" with timeout 10000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts:293:24",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                          "column": 24,
+                          "line": 293
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 291 |\u001b[39m     \u001b[90m// This would require a color contrast checker\u001b[39m\n \u001b[90m 292 |\u001b[39m     \u001b[90m// For now, visual regression testing\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 293 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page)\u001b[33m.\u001b[39mtoHaveScreenshot(\u001b[32m'accessibility-check.png'\u001b[39m\u001b[33m,\u001b[39m {\n \u001b[90m     |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 294 |\u001b[39m       maxDiffPixels\u001b[33m:\u001b[39m \u001b[35m100\u001b[39m\u001b[33m,\u001b[39m\n \u001b[90m 295 |\u001b[39m     })\u001b[33m;\u001b[39m\n \u001b[90m 296 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                            "column": 24,
+                            "line": 293
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: accessibility-check.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(accessibility-check.png)\" with timeout 10000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\n\n  291 |     // This would require a color contrast checker\n  292 |     // For now, visual regression testing\n> 293 |     await expect(page).toHaveScreenshot('accessibility-check.png', {\n      |                        ^\n  294 |       maxDiffPixels: 100,\n  295 |     });\n  296 |   });\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts:293:24"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:42.495Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "accessibility-check-expected.png",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts-snapshots\\accessibility-check-electron-win32.png"
+                        },
+                        {
+                          "name": "accessibility-check-actual.png",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\accessibility-check-actual.png"
+                        },
+                        {
+                          "name": "accessibility-check-diff.png",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\accessibility-check-diff.png"
+                        },
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                        "column": 24,
+                        "line": 293
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "754193c309f7a138fd59-5248e57b88ca495b61df",
+              "file": "app.e2e.ts",
+              "line": 290,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "diagnostic.e2e.ts",
+      "file": "diagnostic.e2e.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "Diagnostic - Check what loads",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 60000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "electron",
+              "projectName": "electron",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 7406,
+                  "errors": [],
+                  "stdout": [
+                    {
+                      "text": "[warning] %cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.\n"
+                    },
+                    {
+                      "text": "Title: OscuraTesti AI\n"
+                    },
+                    {
+                      "text": "URL: file:///C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/codicecivileai/desktop/dist/renderer/index.html\n"
+                    },
+                    {
+                      "text": "HTML length: 11902\n"
+                    },
+                    {
+                      "text": "HTML preview: <!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>OscuraTesti AI</title>\n    <script type=\"module\" crossorigin=\"\" src=\"./assets/index-pRn5z-wl.js\"></script>\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"./assets/index-B5kkpEpS.css\">\n  </head>\n  <body>\n    <div id=\"root\"><div class=\"min-h-screen bg-gray-50\"><div class=\"\"><div class=\"min\n"
+                    },
+                    {
+                      "text": "Root div count: 1\n"
+                    },
+                    {
+                      "text": "Root content: <div class=\"min-h-screen bg-gray-50\"><div class=\"\"><div class=\"min-h-screen flex flex-col\"><header class=\"bg-white border-b px-6 py-4\"><div class=\"flex items-center justify-between\"><div class=\"flex i\n"
+                    },
+                    {
+                      "text": "\n=== SUMMARY ===\n"
+                    },
+                    {
+                      "text": "Console messages: 1\n"
+                    },
+                    {
+                      "text": "Errors: 0\n"
+                    }
+                  ],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2025-11-14T16:17:49.621Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "d8512e7731ef8a6b41d7-39983bc095fc47605b39",
+          "file": "diagnostic.e2e.ts",
+          "line": 4,
+          "column": 5
+        }
+      ]
+    },
+    {
+      "title": "gliner-detection.e2e.ts",
+      "file": "gliner-detection.e2e.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "GLiNER Detection - Full Pipeline",
+          "file": "gliner-detection.e2e.ts",
+          "line": 49,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display detection settings panel",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 159,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched for GLiNER testing\n"
+                        },
+                        {
+                          "text": "✓ Detection settings panel visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:57.139Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-c9d3513053c02af87845",
+              "file": "gliner-detection.e2e.ts",
+              "line": 51,
+              "column": 7
+            },
+            {
+              "title": "should show detection depth slider",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 52,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Current slider value: 1\n"
+                        },
+                        {
+                          "text": "✓ Detection depth slider configured correctly\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:59.124Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-4d978345c22e8c3e63fb",
+              "file": "gliner-detection.e2e.ts",
+              "line": 65,
+              "column": 7
+            },
+            {
+              "title": "should display detection mode labels",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 39,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✓ All detection mode labels present\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:59.212Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-adf85ba6205e48da173f",
+              "file": "gliner-detection.e2e.ts",
+              "line": 83,
+              "column": 7
+            },
+            {
+              "title": "should show time estimates for different depths",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✓ Time estimates visible\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:59.294Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-09a948eb7ed6f36da116",
+              "file": "gliner-detection.e2e.ts",
+              "line": 95,
+              "column": 7
+            },
+            {
+              "title": "should update slider and reflect mode change",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2279,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✓ Fast mode selected (slider value: 0)\n"
+                        },
+                        {
+                          "text": "✓ Balanced mode selected (slider value: 1)\n"
+                        },
+                        {
+                          "text": "✓ Thorough mode selected (slider value: 2)\n"
+                        },
+                        {
+                          "text": "✓ Maximum mode selected (slider value: 3)\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:17:59.339Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-ed55eae4da1be6b04eac",
+              "file": "gliner-detection.e2e.ts",
+              "line": 108,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "GLiNER Detection - Document Processing",
+          "file": "gliner-detection.e2e.ts",
+          "line": 161,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should process document with Fast mode (Presidio only)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 60010,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 16,
+                            "line": 198
+                          },
+                          "message": "Error: page.waitForSelector: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('text=Review detected PII') to be visible\u001b[22m\n\n\n  196 |     // Record start time and wait for results\n  197 |     const startTime = Date.now();\n> 198 |     await page.waitForSelector('text=Review detected PII', { timeout: 60000 });\n      |                ^\n  199 |\n  200 |     const processingTime = Date.now() - startTime;\n  201 |     console.log(`✓ Fast mode processing completed in ${processingTime}ms`);\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:198:16"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Waiting for processing to complete...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:18:01.642Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-476e8-th-Fast-mode-Presidio-only--electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-476e8-th-Fast-mode-Presidio-only--electron\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-d0d0b34523fa37c1b0c8",
+              "file": "gliner-detection.e2e.ts",
+              "line": 163,
+              "column": 7
+            },
+            {
+              "title": "should process document with Balanced mode (Presidio + GLiNER Italian)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 32233,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:240:23",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 23,
+                          "line": 240
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 238 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 239 |\u001b[39m     \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 240 |\u001b[39m     \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 241 |\u001b[39m\n \u001b[90m 242 |\u001b[39m     \u001b[90m// Wait for button to change to \"Processing...\"\u001b[39m\n \u001b[90m 243 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'button:has-text(\"Processing\")'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 23,
+                            "line": 240
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  238 |     await page.waitForTimeout(500);\n  239 |     const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 240 |     await startButton.click();\n      |                       ^\n  241 |\n  242 |     // Wait for button to change to \"Processing...\"\n  243 |     await page.waitForSelector('button:has-text(\"Processing\")', { timeout: 2000 }).catch(() => {});\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:240:23"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched for GLiNER testing\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:19:04.907Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-ebaee-de-Presidio-GLiNER-Italian--electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-ebaee-de-Presidio-GLiNER-Italian--electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 23,
+                        "line": 240
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-27c95293a6bda00ee8c5",
+              "file": "gliner-detection.e2e.ts",
+              "line": 212,
+              "column": 7
+            },
+            {
+              "title": "should process document with Thorough mode (All models)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 32220,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:291:23",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 23,
+                          "line": 291
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 289 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 290 |\u001b[39m     \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 291 |\u001b[39m     \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 292 |\u001b[39m\n \u001b[90m 293 |\u001b[39m     \u001b[90m// Wait for button to change to \"Processing...\"\u001b[39m\n \u001b[90m 294 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'button:has-text(\"Processing\")'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 23,
+                            "line": 291
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  289 |     await page.waitForTimeout(500);\n  290 |     const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 291 |     await startButton.click();\n      |                       ^\n  292 |\n  293 |     // Wait for button to change to \"Processing...\"\n  294 |     await page.waitForSelector('button:has-text(\"Processing\")', { timeout: 2000 }).catch(() => {});\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:291:23"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched for GLiNER testing\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:19:42.903Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-d1416-h-Thorough-mode-All-models--electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-d1416-h-Thorough-mode-All-models--electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 23,
+                        "line": 291
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-6ea3b7978668f3dcbf1d",
+              "file": "gliner-detection.e2e.ts",
+              "line": 263,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "GLiNER Detection - Entity Source Tracking",
+          "file": "gliner-detection.e2e.ts",
+          "line": 319,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display entity source information",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "line": 326,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 56,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched for GLiNER testing\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:20:19.758Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "line": 326,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-3be72f241cf56ccd23a1",
+              "file": "gliner-detection.e2e.ts",
+              "line": 321,
+              "column": 7
+            },
+            {
+              "title": "should show source summary statistics",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 13,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "⚠ Source summary not displayed\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:20:21.819Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-3aed0027d5feecfbf9a3",
+              "file": "gliner-detection.e2e.ts",
+              "line": 349,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "GLiNER Detection - Graceful Fallback",
+          "file": "gliner-detection.e2e.ts",
+          "line": 365,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should handle GLiNER unavailable (Presidio fallback)",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 31641,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:401:23",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 23,
+                          "line": 401
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 399 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 400 |\u001b[39m     \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 401 |\u001b[39m     \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 402 |\u001b[39m\n \u001b[90m 403 |\u001b[39m     \u001b[90m// Wait for button to change to \"Processing...\"\u001b[39m\n \u001b[90m 404 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'button:has-text(\"Processing\")'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 23,
+                            "line": 401
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  399 |     await page.waitForTimeout(500);\n  400 |     const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 401 |     await startButton.click();\n      |                       ^\n  402 |\n  403 |     // Wait for button to change to \"Processing...\"\n  404 |     await page.waitForSelector('button:has-text(\"Processing\")', { timeout: 2000 }).catch(() => {});\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:401:23"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:20:21.856Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-b9aa7-vailable-Presidio-fallback--electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-b9aa7-vailable-Presidio-fallback--electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 23,
+                        "line": 401
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-ebdd5e262f857904a032",
+              "file": "gliner-detection.e2e.ts",
+              "line": 367,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "GLiNER Detection - Performance Benchmarks",
+          "file": "gliner-detection.e2e.ts",
+          "line": 435,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should measure processing time for each mode",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 32288,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:477:25",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 25,
+                          "line": 477
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 475 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 476 |\u001b[39m       \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 477 |\u001b[39m       \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 478 |\u001b[39m\n \u001b[90m 479 |\u001b[39m       \u001b[90m// Wait for button to change to \"Processing...\"\u001b[39m\n \u001b[90m 480 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'button:has-text(\"Processing\")'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 25,
+                            "line": 477
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  475 |       await page.waitForTimeout(500);\n  476 |       const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 477 |       await startButton.click();\n      |                         ^\n  478 |\n  479 |       // Wait for button to change to \"Processing...\"\n  480 |       await page.waitForSelector('button:has-text(\"Processing\")', { timeout: 2000 }).catch(() => {});\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:477:25"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched for GLiNER testing\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:20:56.832Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-0f0c1-ocessing-time-for-each-mode-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-0f0c1-ocessing-time-for-each-mode-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 25,
+                        "line": 477
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-04b389b770b17da53c68",
+              "file": "gliner-detection.e2e.ts",
+              "line": 437,
+              "column": 7
+            },
+            {
+              "title": "should measure memory usage during processing",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 31694,
+                      "error": {
+                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:553:23",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 23,
+                          "line": 553
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 551 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 552 |\u001b[39m     \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 553 |\u001b[39m     \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 554 |\u001b[39m\n \u001b[90m 555 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'text=Review detected PII'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m120000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 556 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 23,
+                            "line": 553
+                          },
+                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  551 |     await page.waitForTimeout(500);\n  552 |     const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 553 |     await startButton.click();\n      |                       ^\n  554 |\n  555 |     await page.waitForSelector('text=Review detected PII', { timeout: 120000 });\n  556 |\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:553:23"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched for GLiNER testing\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:21:34.213Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-f25cf-ory-usage-during-processing-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-f25cf-ory-usage-during-processing-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 23,
+                        "line": 553
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-ad04266368faacf6586d",
+              "file": "gliner-detection.e2e.ts",
+              "line": 524,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "GLiNER Detection - Entity Type Coverage",
+          "file": "gliner-detection.e2e.ts",
+          "line": 577,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should detect Italian-specific entities",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "line": 584,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 59,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched for GLiNER testing\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:22:10.592Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "line": 584,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-8ec5c152a322f2ef635b",
+              "file": "gliner-detection.e2e.ts",
+              "line": 579,
+              "column": 7
+            },
+            {
+              "title": "should detect universal PII entities",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [
+                    {
+                      "type": "skip",
+                      "location": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "line": 619,
+                        "column": 12
+                      }
+                    }
+                  ],
+                  "expectedStatus": "skipped",
+                  "projectId": "electron",
+                  "projectName": "electron",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "skipped",
+                      "duration": 12,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-14T16:22:12.386Z",
+                      "annotations": [
+                        {
+                          "type": "skip",
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "line": 619,
+                            "column": 12
+                          }
+                        }
+                      ],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "f20b5c655f364e01fc1c-fefd3164db0786603115",
+              "file": "gliner-detection.e2e.ts",
+              "line": 615,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-11-14T16:17:20.968Z",
+    "duration": 292101.28300000005,
+    "expected": 20,
+    "skipped": 6,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,110 @@
+i REDAX AI
+Digital Science
+November 2025
+
+Presented
+
+01
+02
+03
+04
+05
+06
+Highlight the Problem & Solution
+Detail Your Product: (HOW IT WORKS)
+Showcase User Interaction:
+Discuss Market Scope:
+Revenue Streams:
+Analyze Competitors: 
+Agenda
+Slide 00
+Slide 00
+Slide 00
+Slide 00
+Slide 00
+Slide 00
+Confidential
+Talk About Future Prospects
+Brevity is Key: 
+
+Professionals face a "bifurcated privacy gap." They are forced to choose between insecure, free online tools (which require data uploads) and expensive, complex enterprise software (like CaseGuard) that is inaccessible to them.
+HIGHLIGHT THE ISSUE
+3
+REDAX AI
+
+REDAX AI
+SOLUTION
+A "Local-First" hybrid redaction platform. It provides the security of an offline desktop application for 80% of tasks, while offering optional, high-intelligence cloud AI (Gemini) for complex jobs, giving the user full control.
+
+REDAX AI
+HOW IT WORKS
+HYBRID ARCHITECTURE
+The platform consists of a free web "hook" and a powerful, free desktop app. The Electron-based desktop app processes all files locally, so sensitive data never leaves the user's machine. 
+
+The free desktop tier uses Microsoft Presidio for high-reliability, pattern-based redaction (SSNs, credit cards) and GLiNER for "zero-shot" custom entity redaction (e.g., "Project Alpha"), all running on the user's hardware.
+
+LOCAL-FIRST TECH:
+PREMIUM CLOUD TECH:
+The premium tier integrates Google Gemini for complex multimodal tasks that local models can't handle, such as redacting handwritten notes in scans, blurring faces in photos, or understanding complex legal context
+
+[ 1 ]
+[ 2 ]
+[ 3 ]
+
+REDAX.AI
+SHOWCASE USER INTERACTION
+
+REDAX AI
+The data privacy software market is a multi-billion dollar industry, rapidly expanding due to strict regulations like GDPR and CCPA.
+MARKET SCOPE
+TAM
+We are targeting the "middle market" gap. This includes solo legal practitioners, independent landlords, and freelance journalists who are priced out of enterprise solutions but require high-security tools.
+SOM
+
+REDAX AI
+REVENUE STREAMS
+FREE DESKTOP TIER
+This is our primary acquisition tool. By offering unlimited local redaction for free, we build a large, "sticky" user base at zero marginal cost
+
+A stable monthly subscription (e.g., $20/mo) for users who want convenience. This tier bundles a pre-paid quota of Gemini API tokens managed by us.
+
+PRO TIER (SUBSCRIPTION)
+POWER TIER (BYOK LICENSE)
+Our "Bring Your Own Key" model for tech-savvy users. They pay a one-time license or small annual fee for the software and use their own Google API key, shifting the variable compute cost to them and giving us a high-margin sale.
+
+[ 1 ]
+[ 2 ]
+[ 3 ]
+
+REDAX AI
+COMPETITORS
+ADOBE ACROBAT
+STIRLING- PDF
+REDACTABLE
+CASEGUARD/
+VERTIONE
+COMPETITORS
+ Is a clunky, manual "default," not a specialized redaction tool. Its features are complex and often fail to scrub hidden metadata.
+Requires technical knowledge to install and manage (like Docker). They lack consumer-friendly UIs and advanced AI reasoning.
+They force users to upload sensitive files, creating a major security and compliance risk.
+These tools are "bloated," require complex and expensive sales cycles, and cost thousands per year, making them inaccessible to individuals.
+
+REDAX AI
+We are specialized and automated. Our AI-powered workflow is faster, more accurate, and guarantees deep file sanitization.
+We deliver the power of tools like Presidio in a simple, double-click installer that any professional can use.
+We win on security and data sovereignty by processing files locally-first. Data never has to leave the user's machine.
+We are self-serve and accessible. Users can download and get value immediately through our freemium model without a sales call
+
+REDAX.AI
+FUTURE PROSPECTS
+Our "Local-First" and "BYOK" models are extremely capital-efficient. We can scale to millions of users with minimal infrastructure costs, as the user provides their own compute power.
+SCALABILITY
+We are positioned to become the default compliance infrastructure for the "gig economy" and decentralized professionals. We are democratizing enterprise-grade privacy for the solo practitioners who are the backbone of the economy.
+VISION & IMPACT
+
+REDAX.AI
+THANK 
+YOU!
+Contact
+name@example.com
+Digital Science AI

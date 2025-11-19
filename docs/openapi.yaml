@@ -1,0 +1,540 @@
+openapi: 3.0.3
+info:
+  title: CodiceCivile.ai API
+  description: |
+    REST API for the CodiceCivile.ai platform providing semantic search,
+    AI-powered chat, and legal article management.
+
+    **Features:**
+    - Semantic search across Italian Civil Code articles
+    - AI-powered legal assistance with Claude
+    - User bookmarks and search history
+    - Vector embeddings for similarity search
+  version: 1.0.0
+  contact:
+    name: CodiceCivile.ai Support
+    email: support@codicecivile.ai
+  license:
+    name: Proprietary
+
+servers:
+  - url: https://api.codicecivile.ai/v1
+    description: Production server
+  - url: https://staging-api.codicecivile.ai/v1
+    description: Staging server
+  - url: http://localhost:8000/v1
+    description: Local development server
+
+tags:
+  - name: articles
+    description: Legal article search and retrieval
+  - name: search
+    description: Semantic search endpoints
+  - name: chat
+    description: AI-powered chat with Claude
+  - name: embeddings
+    description: Vector embeddings management
+  - name: user
+    description: User bookmarks and history
+
+paths:
+  # ARTICLES
+  /articles:
+    get:
+      tags: [articles]
+      summary: List legal articles
+      description: Retrieve a paginated list of legal articles with optional filters
+      parameters:
+        - name: book
+          in: query
+          description: Filter by book number (1-6)
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 6
+        - name: article_type
+          in: query
+          description: Filter by article type
+          schema:
+            type: string
+            enum: [contract, property, family, succession, obligations]
+        - name: limit
+          in: query
+          description: Number of results per page
+          schema:
+            type: integer
+            default: 20
+            minimum: 1
+            maximum: 100
+        - name: offset
+          in: query
+          description: Pagination offset
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Article'
+                  total:
+                    type: integer
+                  limit:
+                    type: integer
+                  offset:
+                    type: integer
+
+  /articles/{articleId}:
+    get:
+      tags: [articles]
+      summary: Get article by ID
+      description: Retrieve a specific legal article by its ID
+      parameters:
+        - name: articleId
+          in: path
+          required: true
+          description: Article ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Article'
+        '404':
+          description: Article not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /articles/{articleId}/related:
+    get:
+      tags: [articles]
+      summary: Get related articles
+      description: Find articles related to a specific article using vector similarity
+      parameters:
+        - name: articleId
+          in: path
+          required: true
+          description: Article ID
+          schema:
+            type: string
+        - name: limit
+          in: query
+          description: Number of related articles
+          schema:
+            type: integer
+            default: 5
+            minimum: 1
+            maximum: 20
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  article_id:
+                    type: string
+                  related_articles:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        article:
+                          $ref: '#/components/schemas/Article'
+                        similarity_score:
+                          type: number
+                          format: float
+                          minimum: 0
+                          maximum: 1
+
+  # SEARCH
+  /search:
+    post:
+      tags: [search]
+      summary: Semantic search
+      description: |
+        Perform semantic search across legal articles using natural language queries.
+        Uses vector embeddings for similarity-based ranking.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - query
+              properties:
+                query:
+                  type: string
+                  description: Natural language search query
+                  example: "diritti del consumatore nei contratti"
+                filters:
+                  type: object
+                  properties:
+                    book:
+                      type: integer
+                      minimum: 1
+                      maximum: 6
+                    article_type:
+                      type: string
+                      enum: [contract, property, family, succession, obligations]
+                    date_range:
+                      type: object
+                      properties:
+                        start:
+                          type: string
+                          format: date
+                        end:
+                          type: string
+                          format: date
+                limit:
+                  type: integer
+                  default: 10
+                  minimum: 1
+                  maximum: 50
+                sort_by:
+                  type: string
+                  enum: [relevance, date, article_number]
+                  default: relevance
+      responses:
+        '200':
+          description: Successful search
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  query:
+                    type: string
+                  results:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        article:
+                          $ref: '#/components/schemas/Article'
+                        relevance_score:
+                          type: number
+                          format: float
+                          minimum: 0
+                          maximum: 1
+                        matched_snippet:
+                          type: string
+                          description: Relevant excerpt from article content
+                  total_results:
+                    type: integer
+                  search_time_ms:
+                    type: integer
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # CHAT
+  /chat:
+    post:
+      tags: [chat]
+      summary: Chat with AI assistant
+      description: |
+        Send messages to the AI legal assistant powered by Claude.
+        Supports streaming responses and article context.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - messages
+              properties:
+                messages:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - role
+                      - content
+                    properties:
+                      role:
+                        type: string
+                        enum: [user, assistant]
+                      content:
+                        type: string
+                context:
+                  type: object
+                  description: Optional article context for the chat
+                  properties:
+                    article_id:
+                      type: string
+                    article_title:
+                      type: string
+                    article_content:
+                      type: string
+                stream:
+                  type: boolean
+                  default: false
+                  description: Enable streaming responses
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  role:
+                    type: string
+                    enum: [assistant]
+                  content:
+                    type: string
+                  related_articles:
+                    type: array
+                    items:
+                      type: string
+                      description: Article IDs cited in the response
+                  timestamp:
+                    type: string
+                    format: date-time
+            text/event-stream:
+              schema:
+                type: string
+                description: Server-sent events for streaming responses
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  # EMBEDDINGS
+  /embeddings:
+    post:
+      tags: [embeddings]
+      summary: Generate text embeddings
+      description: |
+        Generate vector embeddings for text using the same model as article search.
+        Useful for similarity comparisons.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - text
+              properties:
+                text:
+                  type: string
+                  description: Text to embed
+                  maxLength: 8000
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  embedding:
+                    type: array
+                    items:
+                      type: number
+                      format: float
+                    description: 768-dimensional embedding vector
+                  model:
+                    type: string
+                    example: "sentence-transformers/paraphrase-multilingual-mpnet-base-v2"
+
+  # USER BOOKMARKS
+  /user/bookmarks:
+    get:
+      tags: [user]
+      summary: Get user bookmarks
+      description: Retrieve all bookmarked articles for the authenticated user
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  bookmarks:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        article:
+                          $ref: '#/components/schemas/Article'
+                        bookmarked_at:
+                          type: string
+                          format: date-time
+    post:
+      tags: [user]
+      summary: Add bookmark
+      description: Bookmark an article for the authenticated user
+      security:
+        - BearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - article_id
+              properties:
+                article_id:
+                  type: string
+      responses:
+        '201':
+          description: Bookmark created
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  bookmark_id:
+                    type: string
+
+  /user/bookmarks/{articleId}:
+    delete:
+      tags: [user]
+      summary: Remove bookmark
+      description: Remove a bookmarked article
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: articleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '204':
+          description: Bookmark removed
+
+  # USER SEARCH HISTORY
+  /user/history:
+    get:
+      tags: [user]
+      summary: Get search history
+      description: Retrieve recent search queries for the authenticated user
+      security:
+        - BearerAuth: []
+      parameters:
+        - name: limit
+          in: query
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  history:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                        query:
+                          type: string
+                        results_count:
+                          type: integer
+                        created_at:
+                          type: string
+                          format: date-time
+
+components:
+  schemas:
+    Article:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "art-1234"
+        article_number:
+          type: string
+          example: "1234"
+        book:
+          type: integer
+          minimum: 1
+          maximum: 6
+          example: 4
+        title:
+          type: string
+          example: "Diritti del consumatore"
+        content:
+          type: string
+          example: "Il consumatore ha diritto..."
+        keywords:
+          type: array
+          items:
+            type: string
+          example: ["consumatore", "contratti", "diritti"]
+        last_modified:
+          type: string
+          format: date
+          example: "2024-01-15"
+        embedding:
+          type: array
+          items:
+            type: number
+            format: float
+          description: 768-dimensional vector embedding (optional)
+          nullable: true
+
+    Error:
+      type: object
+      properties:
+        error:
+          type: object
+          properties:
+            code:
+              type: string
+              example: "INVALID_REQUEST"
+            message:
+              type: string
+              example: "Invalid article ID provided"
+            details:
+              type: object
+              nullable: true
+
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: JWT token obtained from authentication endpoint
+
+security:
+  - BearerAuth: []

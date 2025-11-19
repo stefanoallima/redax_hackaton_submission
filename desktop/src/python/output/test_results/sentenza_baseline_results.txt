@@ -1,0 +1,84 @@
+SENTENZA E2E TEST RESULTS
+================================================================================
+
+Overall Precision: 7.79%
+Overall Recall: 33.33%
+Overall F1 Score: 12.63%
+
+
+PERSON:
+  Expected: 10
+  Detected: 60
+  Precision: 28.57%
+  Recall: 50.00%
+  F1: 36.36%
+
+  MISSED:
+    - b.s.
+    - i.c.
+    - marco dell'utri
+    - pasquale d'ascola
+  FALSE POSITIVES:
+    - att. c.p.c.
+    - deifilauq
+orptsurt
+    - fide bona
+    - i. c.
+i.
+    - i. c. b.
+    - ill.mi
+    - magistrati
+    - p.q.m.
+accoglie
+    - pasquale d’ascola
+    - varrà
+
+EMAIL:
+  Expected: 2
+  Detected: 2
+  Precision: 100.00%
+  Recall: 100.00%
+  F1: 100.00%
+
+
+ADDRESS:
+  Expected: 5
+  Detected: 6
+  Precision: 0.00%
+  Recall: 0.00%
+  F1: 0.00%
+
+  MISSED:
+    - roma
+    - signa
+    - tuscany
+    - via delle terme di tito n. 92
+  FALSE POSITIVES:
+    - 5/5/2020
+    - collegio
+    - corte d’appello di
+roma
+    - immobiliare callipigia
+    - repubblica italiana
+in nome del popolo italiano
+    - terme di tito
+
+ORGANIZATION:
+  Expected: 1
+  Detected: 9
+  Precision: 0.00%
+  Recall: 0.00%
+  F1: 0.00%
+
+  MISSED:
+    - immobiliare callipigia s.r.l.
+  FALSE POSITIVES:
+    - collegio
+    - corte d’appello di roma
+    - corte suprema di cassazione
+sezioni unite civili
+oggetto:
+    - sezioni unite
+    - sezioni unite
+civili
+    - unite
