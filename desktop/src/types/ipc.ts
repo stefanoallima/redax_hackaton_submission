@@ -11,6 +11,13 @@ export interface DetectionConfig {
   enableVisual: boolean
 }
 
+export interface FieldContext {
+  inferred_field_type: string
+  nearby_label: string
+  confidence: number
+  reasoning: string
+}
+
 export interface PIIEntity {
   entity_type: string
   text: string
@@ -28,6 +35,7 @@ export interface PIIEntity {
       y1: number
     }
   }>
+  field_context?: FieldContext | null
 }
 
 export interface ProcessDocumentCommand {
@@ -46,6 +54,13 @@ export interface ExportRedactedCommand {
 export type IPCCommand = ProcessDocumentCommand | ExportRedactedCommand
 
 // Response types
+export interface SpatialContextMetadata {
+  labels_found: number
+  entities_with_context: number
+  field_type_distribution: Record<string, number>
+  spatial_analysis_time_ms: number
+}
+
 export interface ProcessDocumentResponse {
   status: 'success' | 'error'
   entities?: PIIEntity[]
@@ -54,7 +69,10 @@ export interface ProcessDocumentResponse {
     byType: Record<string, number>
   }
   full_text?: string
-  metadata?: Record<string, any>
+  metadata?: {
+    spatial_context?: SpatialContextMetadata
+    [key: string]: any
+  }
   file_path?: string
   file_type?: string
   error?: string

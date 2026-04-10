@@ -5,117 +5,109 @@
   - banner [ref=e6]:
     - generic [ref=e7]:
       - generic [ref=e8]:
-        - img [ref=e9]
-        - heading "OscuraTesti AI" [level=1] [ref=e12]
-      - generic [ref=e13]:
-        - button "Home" [active] [ref=e14] [cursor=pointer]
-        - button "Impostazioni" [ref=e15] [cursor=pointer]
-  - main [ref=e16]:
-    - generic [ref=e17]:
-      - generic [ref=e18]:
-        - generic [ref=e19]:
-          - heading "Configura Rilevamento" [level=2] [ref=e20]
-          - paragraph [ref=e21]: Seleziona cosa cercare nel documento
-        - generic [ref=e22]:
-          - generic [ref=e23]:
-            - img [ref=e24]
-            - heading "Impostazioni Rilevamento" [level=2] [ref=e27]
-          - generic [ref=e28]:
-            - generic [ref=e29]:
-              - generic [ref=e30]: Profondità Rilevamento
-              - generic [ref=e31]:
-                - img [ref=e32]
-                - generic [ref=e36]: Bilanciato
-            - generic [ref=e37]:
-              - slider [ref=e38] [cursor=pointer]: "1"
-              - generic [ref=e39]:
-                - generic [ref=e40]: Veloce
-                - generic [ref=e41]: Bilanciato
-                - generic [ref=e42]: Approfondito
-                - generic [ref=e43]: Massimo
-            - generic [ref=e45]:
-              - img [ref=e46]
-              - generic [ref=e48]:
-                - paragraph [ref=e49]: Ricerca standard + analisi intelligente sulle pagine chiave
-                - generic [ref=e50]:
-                  - generic [ref=e51]: Tempo:~15-30s
-                  - generic [ref=e52]: Copertura:90-95%
-                  - generic [ref=e53]: Metodi:Pattern + Analisi Contesto
-          - generic [ref=e54]:
-            - generic [ref=e55]:
-              - generic [ref=e56]: Aree di Focus(Attiva rilevamento potenziato)
-              - generic [ref=e57]:
-                - button "Seleziona Tutto" [ref=e58] [cursor=pointer]
-                - generic [ref=e59]: 0 selezionate
-            - generic [ref=e60]:
-              - generic [ref=e61] [cursor=pointer]:
-                - checkbox "IBAN / Conti Bancari iban, conto..." [ref=e62]
-                - generic [ref=e63]:
-                  - generic [ref=e64]: IBAN / Conti Bancari
-                  - generic [ref=e65]: iban, conto...
-              - generic [ref=e66] [cursor=pointer]:
-                - checkbox "Codice Fiscale codice fiscale, cf..." [ref=e67]
-                - generic [ref=e68]:
-                  - generic [ref=e69]: Codice Fiscale
-                  - generic [ref=e70]: codice fiscale, cf...
-              - generic [ref=e71] [cursor=pointer]:
-                - checkbox "Info Contatto telefono, email..." [ref=e72]
-                - generic [ref=e73]:
-                  - generic [ref=e74]: Info Contatto
-                  - generic [ref=e75]: telefono, email...
-              - generic [ref=e76] [cursor=pointer]:
-                - checkbox "Indirizzi indirizzo, residente..." [ref=e77]
-                - generic [ref=e78]:
-                  - generic [ref=e79]: Indirizzi
-                  - generic [ref=e80]: indirizzo, residente...
-              - generic [ref=e81] [cursor=pointer]:
-                - checkbox "Dati Personali nato, nascita..." [ref=e82]
-                - generic [ref=e83]:
-                  - generic [ref=e84]: Dati Personali
-                  - generic [ref=e85]: nato, nascita...
-              - generic [ref=e86] [cursor=pointer]:
-                - checkbox "Dati Finanziari stipendio, pagamento..." [ref=e87]
-                - generic [ref=e88]:
-                  - generic [ref=e89]: Dati Finanziari
-                  - generic [ref=e90]: stipendio, pagamento...
-              - generic [ref=e91] [cursor=pointer]:
-                - checkbox "Info Mediche diagnosi, terapia..." [ref=e92]
-                - generic [ref=e93]:
-                  - generic [ref=e94]: Info Mediche
-                  - generic [ref=e95]: diagnosi, terapia...
-              - generic [ref=e96] [cursor=pointer]:
-                - checkbox "Riferimenti Legali sentenza, tribunale..." [ref=e97]
-                - generic [ref=e98]:
-                  - generic [ref=e99]: Riferimenti Legali
-                  - generic [ref=e100]: sentenza, tribunale...
-          - button "Mostra Opzioni Avanzate" [ref=e102] [cursor=pointer]:
-            - img [ref=e103]
-            - text: Mostra Opzioni Avanzate
-          - generic [ref=e106]:
-            - heading "Riepilogo Rilevamento" [level=3] [ref=e107]
-            - list [ref=e108]:
-              - listitem [ref=e109]:
-                - text: ✓ Ricerca automatica su
-                - strong [ref=e110]: tutte le pagine
-              - listitem [ref=e111]: ✓ Ottimizzato per documenti legali italiani
-      - generic [ref=e112]:
-        - generic [ref=e113]:
-          - heading "Carica Documento" [level=2] [ref=e114]
-          - paragraph [ref=e115]: Seleziona un file PDF o DOCX per rilevare dati personali
-        - generic [ref=e117] [cursor=pointer]:
+        - img "RedaxAI Logo" [ref=e9]
+        - heading "RedaxAI" [level=1] [ref=e10]
+      - button "Settings" [ref=e11] [cursor=pointer]:
+        - img [ref=e12]
+        - text: Settings
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - heading "AI Cloud Intelligence meet Local Privacy Control" [level=2] [ref=e17]
+      - paragraph [ref=e18]: Boost Local redaction via learning from AI You are in control of the data and redaction
+    - generic [ref=e19]:
+      - generic [ref=e20] [cursor=pointer]:
+        - img [ref=e22]
+        - heading "Standard Redaction" [level=3] [ref=e26]
+        - paragraph [ref=e27]: Upload a document and automatically detect sensitive data. You are in control review and adjust the redaction. Boost accuracy via Google Gemini AI Multimodal (text + Images) via the Cloud
+        - list [ref=e28]:
+          - listitem [ref=e29]:
+            - generic [ref=e30]: •
+            - generic [ref=e31]: Auto-detect names, SSNs, addresses
+          - listitem [ref=e32]:
+            - generic [ref=e33]: •
+            - generic [ref=e34]: Review and confirm entities
+          - listitem [ref=e35]:
+            - generic [ref=e36]: •
+            - generic [ref=e37]: Export redacted PDF instantly
+        - generic [ref=e38]:
+          - generic [ref=e39]: Start Redacting
+          - img [ref=e40]
+      - generic [ref=e42] [cursor=pointer]:
+        - img [ref=e44]
+        - heading "Create Redaction Templates with Gemini AI" [level=3] [ref=e47]
+        - paragraph [ref=e48]: Chat-guided redaction template creation.
+        - list [ref=e49]:
+          - listitem [ref=e50]:
+            - generic [ref=e51]: •
+            - generic [ref=e52]: Describe what you want to redact to Gemini AI
+          - listitem [ref=e53]:
+            - generic [ref=e54]: •
+            - generic [ref=e55]: Click & drag to select fields
+          - listitem [ref=e56]:
+            - generic [ref=e57]: •
+            - generic [ref=e58]: Save the redaction template to use it in the Standard Redaction
+        - generic [ref=e59]:
+          - generic [ref=e60]: Create Template
+          - img [ref=e61]
+    - generic [ref=e63]:
+      - heading "Which Mode Should I Use?" [level=3] [ref=e64]
+      - generic [ref=e65]:
+        - generic [ref=e66]:
+          - heading "Standard Redaction" [level=4] [ref=e67]
+          - paragraph [ref=e68]:
+            - strong [ref=e69]: "Best for:"
+          - list [ref=e70]:
+            - listitem [ref=e71]: • One-time documents
+            - listitem [ref=e72]: • Quick redactions
+            - listitem [ref=e73]: • Templated redaction Optional
+            - listitem [ref=e74]: • Send the file to Gemini To increase accuracy of redaction
+        - generic [ref=e75]:
+          - heading "Teaching Mode" [level=4] [ref=e76]
+          - paragraph [ref=e77]:
+            - strong [ref=e78]: "Best for:"
+          - list [ref=e79]:
+            - listitem [ref=e80]: • Creating new templates
+            - listitem [ref=e81]: • Blank forms/contracts
+            - listitem [ref=e82]: • AI covnersation-guided workflow
+    - generic [ref=e83]:
+      - generic [ref=e84]:
+        - generic [ref=e85]: 100%
+        - generic [ref=e86]: Local Processing
+      - generic [ref=e87]:
+        - generic [ref=e88]: 95%+
+        - generic [ref=e89]: Accuracy
+      - generic [ref=e90]:
+        - generic [ref=e91]: <30s
+        - generic [ref=e92]: Per Document
+  - generic [ref=e94]:
+    - generic [ref=e95]:
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - heading "Welcome to CodiceCivile Redact" [level=2] [ref=e98]
+          - paragraph [ref=e99]: Let's redact your first document in 3 easy steps
+        - button "Skip tutorial" [ref=e100] [cursor=pointer]:
+          - img [ref=e101]
+      - generic [ref=e107]: 1 / 5
+    - generic [ref=e109]:
+      - img [ref=e111]
+      - heading "Welcome!" [level=2] [ref=e113]
+      - paragraph [ref=e114]: CodiceCivile Redact uses AI to automatically detect and redact personal information in Italian legal documents. Let us show you how it works.
+      - generic [ref=e115]:
+        - generic [ref=e116]:
           - img [ref=e118]
-          - paragraph [ref=e121]: ✓ test_italian_legal_doc.pdf
-          - paragraph [ref=e122]: 0.67 MB
-          - generic [ref=e123]: Scegli un Altro File
-        - button "Avvia Rilevamento Dati" [ref=e125] [cursor=pointer]
-        - generic [ref=e126]:
-          - generic [ref=e127]:
-            - generic [ref=e128]: 100%
-            - generic [ref=e129]: Offline
-          - generic [ref=e130]:
-            - generic [ref=e131]: 95%+
-            - generic [ref=e132]: Precisione
-          - generic [ref=e133]:
-            - generic [ref=e134]: <30s
-            - generic [ref=e135]: Elaborazione
+          - heading "1. Upload" [level=3] [ref=e121]
+          - paragraph [ref=e122]: Select your document
+        - generic [ref=e123]:
+          - img [ref=e125]
+          - heading "2. Review" [level=3] [ref=e128]
+          - paragraph [ref=e129]: Verify detections
+        - generic [ref=e130]:
+          - img [ref=e132]
+          - heading "3. Export" [level=3] [ref=e135]
+          - paragraph [ref=e136]: Download redacted PDF
+    - generic [ref=e138]:
+      - button "Skip Tutorial" [ref=e139] [cursor=pointer]
+      - button "Continue" [ref=e140] [cursor=pointer]:
+        - text: Continue
+        - img [ref=e141]
 ```

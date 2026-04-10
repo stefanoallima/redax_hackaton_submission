@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\playwright.config.ts",
-    "rootDir": "C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/codicecivileai/desktop/e2e",
+    "configFile": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\playwright.config.ts",
+    "rootDir": "C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/redax_hackaton_submission/desktop/e2e",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -37,7 +37,7 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/codicecivileai/desktop/test-results",
+        "outputDir": "C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/redax_hackaton_submission/desktop/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {
@@ -45,7 +45,7 @@
         },
         "id": "electron",
         "name": "electron",
-        "testDir": "C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/codicecivileai/desktop/e2e",
+        "testDir": "C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/redax_hackaton_submission/desktop/e2e",
         "testIgnore": [],
         "testMatch": [
           "**/*.e2e.ts"
@@ -76,7 +76,7 @@
           "specs": [
             {
               "title": "should launch the application",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -89,9 +89,28 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 116,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 119,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"OscuraTesti AI\"\u001b[39m\nReceived string:    \u001b[31m\"Redax AI\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"OscuraTesti AI\"\u001b[39m\nReceived string:    \u001b[31m\"Redax AI\"\u001b[39m\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:45:19",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                          "column": 19,
+                          "line": 45
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 43 |\u001b[39m\n \u001b[90m 44 |\u001b[39m     \u001b[36mconst\u001b[39m title \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mtitle()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 45 |\u001b[39m     expect(title)\u001b[33m.\u001b[39mtoContain(\u001b[32m'OscuraTesti AI'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 46 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 47 |\u001b[39m\n \u001b[90m 48 |\u001b[39m   test(\u001b[32m'should display the home page'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                            "column": 19,
+                            "line": 45
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"OscuraTesti AI\"\u001b[39m\nReceived string:    \u001b[31m\"Redax AI\"\u001b[39m\n\n  43 |\n  44 |     const title = await page.title();\n> 45 |     expect(title).toContain('OscuraTesti AI');\n     |                   ^\n  46 |   });\n  47 |\n  48 |   test('should display the home page', async () => {\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:45:19"
+                        }
+                      ],
                       "stdout": [
                         {
                           "text": "Electron app launched\n"
@@ -99,12 +118,28 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:24.261Z",
+                      "startTime": "2025-11-19T15:50:30.824Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Desktop-App---E-24bc0-ould-launch-the-application-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Desktop-App---E-24bc0-ould-launch-the-application-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                        "column": 19,
+                        "line": 45
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "754193c309f7a138fd59-8ce2ba240346e5ee74da",
@@ -114,7 +149,7 @@
             },
             {
               "title": "should display the home page",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -125,20 +160,54 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 1,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 77,
-                      "errors": [],
-                      "stdout": [],
+                      "status": "failed",
+                      "duration": 10136,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"upload-area\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"upload-area\"]')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"upload-area\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"upload-area\"]')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:55:30",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                          "column": 30,
+                          "line": 55
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 53 |\u001b[39m     \u001b[90m// Check for upload area\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[36mconst\u001b[39m uploadArea \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"upload-area\"]'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m expect(uploadArea)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                              \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 57 |\u001b[39m\n \u001b[90m 58 |\u001b[39m   test(\u001b[32m'should show settings page when clicking settings'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                            "column": 30,
+                            "line": 55
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"upload-area\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"upload-area\"]')\u001b[22m\n\n\n  53 |     // Check for upload area\n  54 |     const uploadArea = await page.locator('[data-testid=\"upload-area\"]');\n> 55 |     await expect(uploadArea).toBeVisible({ timeout: 10000 });\n     |                              ^\n  56 |   });\n  57 |\n  58 |   test('should show settings page when clicking settings', async () => {\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:55:30"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:26.354Z",
+                      "startTime": "2025-11-19T15:50:37.836Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Desktop-App---E-53f3a-hould-display-the-home-page-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                        "column": 30,
+                        "line": 55
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "754193c309f7a138fd59-cda7eeacdad9a798f1a4",
@@ -159,51 +228,55 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 0,
+                      "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 5179,
+                      "duration": 30134,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Settings, text=Preferences')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Settings, text=Preferences')\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Settings, text=Preferences')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Settings, text=Preferences')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts:65:69",
+                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"settings-button\"], button:has-text(\"Settings\")')\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"px-4 py-2 text-sm text-gray-600 hover:text-gray-900 flex items-center gap-2\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"settings-button\"], button:has-text(\"Settings\")')\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"px-4 py-2 text-sm text-gray-600 hover:text-gray-900 flex items-center gap-2\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:62:28",
                         "location": {
-                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
-                          "column": 69,
-                          "line": 65
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                          "column": 28,
+                          "line": 62
                         },
-                        "snippet": "\u001b[0m \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[90m// Verify settings page loaded\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 65 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Settings, text=Preferences'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 66 |\u001b[39m     }\n \u001b[90m 67 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 68 |\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 60 |\u001b[39m     \u001b[36mconst\u001b[39m settingsButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"settings-button\"], button:has-text(\"Settings\")'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m     \u001b[36mif\u001b[39m (\u001b[36mawait\u001b[39m settingsButton\u001b[33m.\u001b[39misVisible()) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 62 |\u001b[39m       \u001b[36mawait\u001b[39m settingsButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m       \u001b[90m// Verify settings page loaded\u001b[39m\n \u001b[90m 65 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Settings, text=Preferences'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
-                            "column": 69,
-                            "line": 65
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                            "column": 28,
+                            "line": 62
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Settings, text=Preferences')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Settings, text=Preferences')\u001b[22m\n\n\n  63 |\n  64 |       // Verify settings page loaded\n> 65 |       await expect(page.locator('text=Settings, text=Preferences')).toBeVisible({ timeout: 5000 });\n     |                                                                     ^\n  66 |     }\n  67 |   });\n  68 |\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts:65:69"
+                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"settings-button\"], button:has-text(\"Settings\")')\u001b[22m\n\u001b[2m    - locator resolved to <button class=\"px-4 py-2 text-sm text-gray-600 hover:text-gray-900 flex items-center gap-2\">…</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is visible, enabled and stable\u001b[22m\n\u001b[2m      - scrolling into view if needed\u001b[22m\n\u001b[2m      - done scrolling\u001b[22m\n\u001b[2m      - <div class=\"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    56 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is visible, enabled and stable\u001b[22m\n\u001b[2m       - scrolling into view if needed\u001b[22m\n\u001b[2m       - done scrolling\u001b[22m\n\u001b[2m       - <div class=\"fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4\">…</div> intercepts pointer events\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n  60 |     const settingsButton = await page.locator('[data-testid=\"settings-button\"], button:has-text(\"Settings\")');\n  61 |     if (await settingsButton.isVisible()) {\n> 62 |       await settingsButton.click();\n     |                            ^\n  63 |\n  64 |       // Verify settings page loaded\n  65 |       await expect(page.locator('text=Settings, text=Preferences')).toBeVisible({ timeout: 5000 });\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:62:28"
                         }
                       ],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:26.475Z",
+                      "startTime": "2025-11-19T15:50:57.836Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Desktop-App---E-bc86f-page-when-clicking-settings-electron\\test-failed-1.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Desktop-App---E-bc86f-page-when-clicking-settings-electron\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Desktop-App---E-bc86f-page-when-clicking-settings-electron\\error-context.md"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Desktop-App---E-bc86f-page-when-clicking-settings-electron\\error-context.md"
                         }
                       ],
                       "errorLocation": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
-                        "column": 69,
-                        "line": 65
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                        "column": 28,
+                        "line": 62
                       }
                     }
                   ],
@@ -226,7 +299,7 @@
                     {
                       "type": "skip",
                       "location": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
                         "line": 81,
                         "column": 12
                       }
@@ -237,10 +310,10 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 250,
+                      "duration": 120,
                       "errors": [],
                       "stdout": [
                         {
@@ -249,12 +322,12 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:38.357Z",
+                      "startTime": "2025-11-19T15:51:34.383Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
                             "line": 81,
                             "column": 12
                           }
@@ -284,15 +357,15 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 23,
+                      "duration": 33,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:40.848Z",
+                      "startTime": "2025-11-19T15:51:37.187Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -318,15 +391,15 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 16,
+                      "duration": 31,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:40.960Z",
+                      "startTime": "2025-11-19T15:51:37.285Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -352,15 +425,15 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 39,
+                      "duration": 23,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:41.024Z",
+                      "startTime": "2025-11-19T15:51:37.380Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -386,15 +459,15 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 18,
+                      "duration": 26,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:41.104Z",
+                      "startTime": "2025-11-19T15:51:37.438Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -420,15 +493,15 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 90,
+                      "duration": 23,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:41.152Z",
+                      "startTime": "2025-11-19T15:51:37.505Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -454,15 +527,15 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 43,
+                      "duration": 34,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:41.283Z",
+                      "startTime": "2025-11-19T15:51:37.572Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -488,19 +561,15 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 221,
+                      "duration": 18,
                       "errors": [],
-                      "stdout": [
-                        {
-                          "text": "Drag-drop UI interaction tested\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:41.379Z",
+                      "startTime": "2025-11-19T15:51:37.632Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -534,19 +603,19 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 136,
+                      "duration": 131,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "Page load time: 125ms\n"
+                          "text": "Page load time: 114ms\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:41.651Z",
+                      "startTime": "2025-11-19T15:51:37.684Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -570,7 +639,7 @@
                     {
                       "type": "skip",
                       "location": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
                         "line": 238,
                         "column": 10
                       }
@@ -581,20 +650,20 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 13,
+                      "duration": 9,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:41.834Z",
+                      "startTime": "2025-11-19T15:51:37.852Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
                             "line": 238,
                             "column": 10
                           }
@@ -632,15 +701,15 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 15,
+                      "duration": 11,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:41.891Z",
+                      "startTime": "2025-11-19T15:51:37.911Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -664,7 +733,7 @@
                     {
                       "type": "skip",
                       "location": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
                         "line": 260,
                         "column": 10
                       }
@@ -675,20 +744,20 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 6,
+                      "duration": 12,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:41.965Z",
+                      "startTime": "2025-11-19T15:51:37.994Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
                             "line": 260,
                             "column": 10
                           }
@@ -715,7 +784,7 @@
           "specs": [
             {
               "title": "should have proper ARIA labels",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -726,20 +795,55 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 3,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 193,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 162,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m\"\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m\"\"\u001b[39m\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:276:33",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                          "column": 33,
+                          "line": 276
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 274 |\u001b[39m\n \u001b[90m 275 |\u001b[39m       \u001b[90m// Button should have either aria-label or text content\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 276 |\u001b[39m       expect(ariaLabel \u001b[33m||\u001b[39m text)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 277 |\u001b[39m     }\n \u001b[90m 278 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 279 |\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                            "column": 33,
+                            "line": 276
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31m\"\"\u001b[39m\n\n  274 |\n  275 |       // Button should have either aria-label or text content\n> 276 |       expect(ariaLabel || text).toBeTruthy();\n      |                                 ^\n  277 |     }\n  278 |   });\n  279 |\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:276:33"
+                        }
+                      ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:42.013Z",
+                      "startTime": "2025-11-19T15:51:38.088Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Accessibility-T-74072-uld-have-proper-ARIA-labels-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Accessibility-T-74072-uld-have-proper-ARIA-labels-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
+                        "column": 33,
+                        "line": 276
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "754193c309f7a138fd59-84b9d915d6ccf7524684",
@@ -760,15 +864,19 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 186,
+                      "duration": 246,
                       "errors": [],
-                      "stdout": [],
+                      "stdout": [
+                        {
+                          "text": "Electron app launched\n"
+                        }
+                      ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:42.273Z",
+                      "startTime": "2025-11-19T15:51:42.796Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -794,15 +902,15 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 1887,
+                      "duration": 1756,
                       "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: accessibility-check.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(accessibility-check.png)\" with timeout 10000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: accessibility-check.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(accessibility-check.png)\" with timeout 10000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts:293:24",
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  Expected an image 629px by 741px, received 1184px by 741px. 281286 pixels (ratio 0.33 of all image pixels) are different.\n\n  Snapshot: accessibility-check.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(accessibility-check.png)\" with timeout 10000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 281286 pixels (ratio 0.33 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 281286 pixels (ratio 0.33 of all image pixels) are different.\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  Expected an image 629px by 741px, received 1184px by 741px. 281286 pixels (ratio 0.33 of all image pixels) are different.\n\n  Snapshot: accessibility-check.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(accessibility-check.png)\" with timeout 10000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 281286 pixels (ratio 0.33 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 281286 pixels (ratio 0.33 of all image pixels) are different.\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:293:24",
                         "location": {
-                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
                           "column": 24,
                           "line": 293
                         },
@@ -811,47 +919,47 @@
                       "errors": [
                         {
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
                             "column": 24,
                             "line": 293
                           },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\n\n  Snapshot: accessibility-check.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(accessibility-check.png)\" with timeout 10000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 23529 pixels (ratio 0.03 of all image pixels) are different.\u001b[22m\n\n\n  291 |     // This would require a color contrast checker\n  292 |     // For now, visual regression testing\n> 293 |     await expect(page).toHaveScreenshot('accessibility-check.png', {\n      |                        ^\n  294 |       maxDiffPixels: 100,\n  295 |     });\n  296 |   });\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts:293:24"
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mpage\u001b[39m\u001b[2m).\u001b[22mtoHaveScreenshot\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\n  Expected an image 629px by 741px, received 1184px by 741px. 281286 pixels (ratio 0.33 of all image pixels) are different.\n\n  Snapshot: accessibility-check.png\n\nCall log:\n\u001b[2m  - Expect \"toHaveScreenshot(accessibility-check.png)\" with timeout 10000ms\u001b[22m\n\u001b[2m    - verifying given screenshot expectation\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 281286 pixels (ratio 0.33 of all image pixels) are different.\u001b[22m\n\u001b[2m  - waiting 100ms before taking screenshot\u001b[22m\n\u001b[2m  - taking page screenshot\u001b[22m\n\u001b[2m    - disabled all CSS animations\u001b[22m\n\u001b[2m  - waiting for fonts to load...\u001b[22m\n\u001b[2m  - fonts loaded\u001b[22m\n\u001b[2m  - captured a stable screenshot\u001b[22m\n\u001b[2m  - Expected an image 629px by 741px, received 1184px by 741px. 281286 pixels (ratio 0.33 of all image pixels) are different.\u001b[22m\n\n\n  291 |     // This would require a color contrast checker\n  292 |     // For now, visual regression testing\n> 293 |     await expect(page).toHaveScreenshot('accessibility-check.png', {\n      |                        ^\n  294 |       maxDiffPixels: 100,\n  295 |     });\n  296 |   });\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts:293:24"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:42.495Z",
+                      "startTime": "2025-11-19T15:51:45.562Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "accessibility-check-expected.png",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts-snapshots\\accessibility-check-electron-win32.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts-snapshots\\accessibility-check-electron-win32.png"
                         },
                         {
                           "name": "accessibility-check-actual.png",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\accessibility-check-actual.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\accessibility-check-actual.png"
                         },
                         {
                           "name": "accessibility-check-diff.png",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\accessibility-check-diff.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\accessibility-check-diff.png"
                         },
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\test-failed-1.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\error-context.md"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\app.e2e.ts-Accessibility-T-d42e3-e-sufficient-color-contrast-electron\\error-context.md"
                         }
                       ],
                       "errorLocation": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\app.e2e.ts",
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\app.e2e.ts",
                         "column": 24,
                         "line": 293
                       }
@@ -888,38 +996,41 @@
               "projectName": "electron",
               "results": [
                 {
-                  "workerIndex": 2,
+                  "workerIndex": 5,
                   "parallelIndex": 0,
                   "status": "passed",
-                  "duration": 7406,
+                  "duration": 7025,
                   "errors": [],
                   "stdout": [
+                    {
+                      "text": "[log] ✅ URL.parse() polyfill loaded\n"
+                    },
                     {
                       "text": "[warning] %cElectron Security Warning (Insecure Content-Security-Policy) font-weight: bold; This renderer process has either no Content Security\n  Policy set or a policy with \"unsafe-eval\" enabled. This exposes users of\n  this app to unnecessary security risks.\n\nFor more information and help, consult\nhttps://electronjs.org/docs/tutorial/security.\nThis warning will not show up\nonce the app is packaged.\n"
                     },
                     {
-                      "text": "Title: OscuraTesti AI\n"
+                      "text": "Title: Redax AI\n"
                     },
                     {
-                      "text": "URL: file:///C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/codicecivileai/desktop/dist/renderer/index.html\n"
+                      "text": "URL: file:///C:/Users/tucan/Documents/stefano/hackaton/huggingface_gradio/redax_hackaton_submission/desktop/dist/renderer/index.html\n"
                     },
                     {
-                      "text": "HTML length: 11902\n"
+                      "text": "HTML length: 12214\n"
                     },
                     {
-                      "text": "HTML preview: <!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>OscuraTesti AI</title>\n    <script type=\"module\" crossorigin=\"\" src=\"./assets/index-pRn5z-wl.js\"></script>\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"./assets/index-B5kkpEpS.css\">\n  </head>\n  <body>\n    <div id=\"root\"><div class=\"min-h-screen bg-gray-50\"><div class=\"\"><div class=\"min\n"
+                      "text": "HTML preview: <!DOCTYPE html><html lang=\"en\"><head>\n    <meta charset=\"UTF-8\">\n    <link rel=\"icon\" type=\"image/svg+xml\" href=\"/vite.svg\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Redax AI</title>\n    <script type=\"module\" crossorigin=\"\" src=\"./assets/index-6FK_IJW8.js\"></script>\n    <link rel=\"stylesheet\" crossorigin=\"\" href=\"./assets/index-B160qTZJ.css\">\n  </head>\n  <body>\n    <div id=\"root\"><div class=\"min-h-screen bg-gray-50\"><div class=\"\"><div class=\"min-h-scr\n"
                     },
                     {
                       "text": "Root div count: 1\n"
                     },
                     {
-                      "text": "Root content: <div class=\"min-h-screen bg-gray-50\"><div class=\"\"><div class=\"min-h-screen flex flex-col\"><header class=\"bg-white border-b px-6 py-4\"><div class=\"flex items-center justify-between\"><div class=\"flex i\n"
+                      "text": "Root content: <div class=\"min-h-screen bg-gray-50\"><div class=\"\"><div class=\"min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50\"><header class=\"bg-white border-b shadow-sm px-6 py-4\"><div class=\n"
                     },
                     {
                       "text": "\n=== SUMMARY ===\n"
                     },
                     {
-                      "text": "Console messages: 1\n"
+                      "text": "Console messages: 2\n"
                     },
                     {
                       "text": "Errors: 0\n"
@@ -927,7 +1038,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2025-11-14T16:17:49.621Z",
+                  "startTime": "2025-11-19T15:51:50.994Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -957,7 +1068,7 @@
           "specs": [
             {
               "title": "should display detection settings panel",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -968,27 +1079,59 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 5,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 159,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 10096,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"detection-settings\"]').or(locator('text=Detection Settings')).first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"detection-settings\"]').or(locator('text=Detection Settings')).first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"detection-settings\"]').or(locator('text=Detection Settings')).first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"detection-settings\"]').or(locator('text=Detection Settings')).first()\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:60:33",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 33,
+                          "line": 60
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 58 |\u001b[39m     \u001b[90m// Check for detection settings panel\u001b[39m\n \u001b[90m 59 |\u001b[39m     \u001b[36mconst\u001b[39m settingsPanel \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"detection-settings\"]'\u001b[39m)\u001b[33m.\u001b[39mor(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=Detection Settings'\u001b[39m))\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 60 |\u001b[39m     \u001b[36mawait\u001b[39m expect(settingsPanel)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m10000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 61 |\u001b[39m\n \u001b[90m 62 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✓ Detection settings panel visible'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 63 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 33,
+                            "line": 60
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"detection-settings\"]').or(locator('text=Detection Settings')).first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"detection-settings\"]').or(locator('text=Detection Settings')).first()\u001b[22m\n\n\n  58 |     // Check for detection settings panel\n  59 |     const settingsPanel = await page.locator('[data-testid=\"detection-settings\"]').or(page.locator('text=Detection Settings')).first();\n> 60 |     await expect(settingsPanel).toBeVisible({ timeout: 10000 });\n     |                                 ^\n  61 |\n  62 |     console.log('✓ Detection settings panel visible');\n  63 |   });\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:60:33"
+                        }
+                      ],
                       "stdout": [
                         {
                           "text": "Electron app launched for GLiNER testing\n"
-                        },
-                        {
-                          "text": "✓ Detection settings panel visible\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:57.139Z",
+                      "startTime": "2025-11-19T15:51:58.121Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-584b8-ay-detection-settings-panel-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-584b8-ay-detection-settings-panel-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 33,
+                        "line": 60
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "f20b5c655f364e01fc1c-c9d3513053c02af87845",
@@ -998,7 +1141,7 @@
             },
             {
               "title": "should show detection depth slider",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1009,27 +1152,59 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 6,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 52,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 10066,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"depth-slider\"], input[type=\"range\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"], input[type=\"range\"]').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"depth-slider\"], input[type=\"range\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"], input[type=\"range\"]').first()\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:68:31",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 31,
+                          "line": 68
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 66 |\u001b[39m     \u001b[90m// Find the depth slider\u001b[39m\n \u001b[90m 67 |\u001b[39m     \u001b[36mconst\u001b[39m depthSlider \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"depth-slider\"], input[type=\"range\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 68 |\u001b[39m     \u001b[36mawait\u001b[39m expect(depthSlider)\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                               \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 69 |\u001b[39m\n \u001b[90m 70 |\u001b[39m     \u001b[90m// Get slider value\u001b[39m\n \u001b[90m 71 |\u001b[39m     \u001b[36mconst\u001b[39m sliderValue \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m depthSlider\u001b[33m.\u001b[39mgetAttribute(\u001b[32m'value'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 31,
+                            "line": 68
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('[data-testid=\"depth-slider\"], input[type=\"range\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"], input[type=\"range\"]').first()\u001b[22m\n\n\n  66 |     // Find the depth slider\n  67 |     const depthSlider = await page.locator('[data-testid=\"depth-slider\"], input[type=\"range\"]').first();\n> 68 |     await expect(depthSlider).toBeVisible();\n     |                               ^\n  69 |\n  70 |     // Get slider value\n  71 |     const sliderValue = await depthSlider.getAttribute('value');\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:68:31"
+                        }
+                      ],
                       "stdout": [
                         {
-                          "text": "Current slider value: 1\n"
-                        },
-                        {
-                          "text": "✓ Detection depth slider configured correctly\n"
+                          "text": "Electron app launched for GLiNER testing\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:59.124Z",
+                      "startTime": "2025-11-19T15:52:13.754Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-443ec-show-detection-depth-slider-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-443ec-show-detection-depth-slider-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 31,
+                        "line": 68
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "f20b5c655f364e01fc1c-4d978345c22e8c3e63fb",
@@ -1039,7 +1214,7 @@
             },
             {
               "title": "should display detection mode labels",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1050,24 +1225,59 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 7,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 39,
-                      "errors": [],
+                      "status": "failed",
+                      "duration": 5049,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Veloce').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Veloce').first()\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Veloce').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Veloce').first()\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:89:27",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 27,
+                          "line": 89
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 87 |\u001b[39m     \u001b[36mfor\u001b[39m (\u001b[36mconst\u001b[39m mode \u001b[36mof\u001b[39m modeLabels) {\n \u001b[90m 88 |\u001b[39m       \u001b[36mconst\u001b[39m label \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m`text=${mode}`\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 89 |\u001b[39m       \u001b[36mawait\u001b[39m expect(label)\u001b[33m.\u001b[39mtoBeVisible({ timeout\u001b[33m:\u001b[39m \u001b[35m5000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 90 |\u001b[39m     }\n \u001b[90m 91 |\u001b[39m\n \u001b[90m 92 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✓ All detection mode labels present'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 27,
+                            "line": 89
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('text=Veloce').first()\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=Veloce').first()\u001b[22m\n\n\n  87 |     for (const mode of modeLabels) {\n  88 |       const label = await page.locator(`text=${mode}`).first();\n> 89 |       await expect(label).toBeVisible({ timeout: 5000 });\n     |                           ^\n  90 |     }\n  91 |\n  92 |     console.log('✓ All detection mode labels present');\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:89:27"
+                        }
+                      ],
                       "stdout": [
                         {
-                          "text": "✓ All detection mode labels present\n"
+                          "text": "Electron app launched for GLiNER testing\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:59.212Z",
+                      "startTime": "2025-11-19T15:52:29.068Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-ee5c5-splay-detection-mode-labels-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-ee5c5-splay-detection-mode-labels-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 27,
+                        "line": 89
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "f20b5c655f364e01fc1c-adf85ba6205e48da173f",
@@ -1088,19 +1298,22 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 8,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13,
+                      "duration": 74,
                       "errors": [],
                       "stdout": [
+                        {
+                          "text": "Electron app launched for GLiNER testing\n"
+                        },
                         {
                           "text": "✓ Time estimates visible\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:59.294Z",
+                      "startTime": "2025-11-19T15:52:38.685Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1115,7 +1328,7 @@
             },
             {
               "title": "should update slider and reflect mode change",
-              "ok": true,
+              "ok": false,
               "tags": [],
               "tests": [
                 {
@@ -1126,33 +1339,55 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 8,
                       "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2279,
-                      "errors": [],
-                      "stdout": [
-                        {
-                          "text": "✓ Fast mode selected (slider value: 0)\n"
+                      "status": "failed",
+                      "duration": 30026,
+                      "error": {
+                        "message": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"]').or(locator('input[type=\"range\"]')).first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"]').or(locator('input[type=\"range\"]')).first()\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:113:23",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 23,
+                          "line": 113
                         },
+                        "snippet": "\u001b[0m \u001b[90m 111 |\u001b[39m\n \u001b[90m 112 |\u001b[39m     \u001b[90m// Set to Fast mode (0)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 113 |\u001b[39m     \u001b[36mawait\u001b[39m depthSlider\u001b[33m.\u001b[39mevaluate((el\u001b[33m:\u001b[39m \u001b[33mHTMLInputElement\u001b[39m) \u001b[33m=>\u001b[39m {\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 114 |\u001b[39m       el\u001b[33m.\u001b[39mvalue \u001b[33m=\u001b[39m \u001b[32m'0'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 115 |\u001b[39m       el\u001b[33m.\u001b[39mdispatchEvent(\u001b[36mnew\u001b[39m \u001b[33mEvent\u001b[39m(\u001b[32m'input'\u001b[39m\u001b[33m,\u001b[39m { bubbles\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m;\u001b[39m\n \u001b[90m 116 |\u001b[39m       el\u001b[33m.\u001b[39mdispatchEvent(\u001b[36mnew\u001b[39m \u001b[33mEvent\u001b[39m(\u001b[32m'change'\u001b[39m\u001b[33m,\u001b[39m { bubbles\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
                         {
-                          "text": "✓ Balanced mode selected (slider value: 1)\n"
-                        },
-                        {
-                          "text": "✓ Thorough mode selected (slider value: 2)\n"
-                        },
-                        {
-                          "text": "✓ Maximum mode selected (slider value: 3)\n"
+                          "location": {
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 23,
+                            "line": 113
+                          },
+                          "message": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"]').or(locator('input[type=\"range\"]')).first()\u001b[22m\n\n\n  111 |\n  112 |     // Set to Fast mode (0)\n> 113 |     await depthSlider.evaluate((el: HTMLInputElement) => {\n      |                       ^\n  114 |       el.value = '0';\n  115 |       el.dispatchEvent(new Event('input', { bubbles: true }));\n  116 |       el.dispatchEvent(new Event('change', { bubbles: true }));\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:113:23"
                         }
                       ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:17:59.339Z",
+                      "startTime": "2025-11-19T15:52:40.586Z",
                       "annotations": [],
-                      "attachments": []
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-f209d-der-and-reflect-mode-change-electron\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-f209d-der-and-reflect-mode-change-electron\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 23,
+                        "line": 113
+                      }
                     }
                   ],
-                  "status": "expected"
+                  "status": "unexpected"
                 }
               ],
               "id": "f20b5c655f364e01fc1c-ed55eae4da1be6b04eac",
@@ -1181,48 +1416,56 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 2,
+                      "workerIndex": 9,
                       "parallelIndex": 0,
-                      "status": "timedOut",
-                      "duration": 60010,
+                      "status": "failed",
+                      "duration": 30036,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        "message": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"]').or(locator('input[type=\"range\"]')).first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"]').or(locator('input[type=\"range\"]')).first()\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:166:23",
+                        "location": {
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 23,
+                          "line": 166
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 164 |\u001b[39m     \u001b[90m// Set slider to Fast mode\u001b[39m\n \u001b[90m 165 |\u001b[39m     \u001b[36mconst\u001b[39m depthSlider \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"depth-slider\"]'\u001b[39m)\u001b[33m.\u001b[39mor(page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"range\"]'\u001b[39m))\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 166 |\u001b[39m     \u001b[36mawait\u001b[39m depthSlider\u001b[33m.\u001b[39mevaluate((el\u001b[33m:\u001b[39m \u001b[33mHTMLInputElement\u001b[39m) \u001b[33m=>\u001b[39m {\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 167 |\u001b[39m       el\u001b[33m.\u001b[39mvalue \u001b[33m=\u001b[39m \u001b[32m'0'\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 168 |\u001b[39m       el\u001b[33m.\u001b[39mdispatchEvent(\u001b[36mnew\u001b[39m \u001b[33mEvent\u001b[39m(\u001b[32m'change'\u001b[39m\u001b[33m,\u001b[39m { bubbles\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m;\u001b[39m\n \u001b[90m 169 |\u001b[39m     })\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
-                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
-                        },
-                        {
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                            "column": 16,
-                            "line": 198
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 23,
+                            "line": 166
                           },
-                          "message": "Error: page.waitForSelector: Target page, context or browser has been closed\nCall log:\n\u001b[2m  - waiting for locator('text=Review detected PII') to be visible\u001b[22m\n\n\n  196 |     // Record start time and wait for results\n  197 |     const startTime = Date.now();\n> 198 |     await page.waitForSelector('text=Review detected PII', { timeout: 60000 });\n      |                ^\n  199 |\n  200 |     const processingTime = Date.now() - startTime;\n  201 |     console.log(`✓ Fast mode processing completed in ${processingTime}ms`);\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:198:16"
+                          "message": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"]').or(locator('input[type=\"range\"]')).first()\u001b[22m\n\n\n  164 |     // Set slider to Fast mode\n  165 |     const depthSlider = await page.locator('[data-testid=\"depth-slider\"]').or(page.locator('input[type=\"range\"]')).first();\n> 166 |     await depthSlider.evaluate((el: HTMLInputElement) => {\n      |                       ^\n  167 |       el.value = '0';\n  168 |       el.dispatchEvent(new Event('change', { bubbles: true }));\n  169 |     });\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:166:23"
                         }
                       ],
                       "stdout": [
                         {
-                          "text": "Waiting for processing to complete...\n"
+                          "text": "Electron app launched for GLiNER testing\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:18:01.642Z",
+                      "startTime": "2025-11-19T15:53:13.863Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-476e8-th-Fast-mode-Presidio-only--electron\\test-failed-1.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-476e8-th-Fast-mode-Presidio-only--electron\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-476e8-th-Fast-mode-Presidio-only--electron\\error-context.md"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-476e8-th-Fast-mode-Presidio-only--electron\\error-context.md"
                         }
-                      ]
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 23,
+                        "line": 166
+                      }
                     }
                   ],
                   "status": "unexpected"
@@ -1246,28 +1489,28 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 3,
+                      "workerIndex": 10,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 32233,
+                      "duration": 30061,
                       "error": {
-                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:240:23",
+                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"home-button\"]').or(locator('a[href=\"/\"]')).first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"home-button\"]').or(locator('a[href=\"/\"]')).first()\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:215:22",
                         "location": {
-                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                          "column": 23,
-                          "line": 240
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 22,
+                          "line": 215
                         },
-                        "snippet": "\u001b[0m \u001b[90m 238 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 239 |\u001b[39m     \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 240 |\u001b[39m     \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 241 |\u001b[39m\n \u001b[90m 242 |\u001b[39m     \u001b[90m// Wait for button to change to \"Processing...\"\u001b[39m\n \u001b[90m 243 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'button:has-text(\"Processing\")'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 213 |\u001b[39m     \u001b[90m// Navigate back to home\u001b[39m\n \u001b[90m 214 |\u001b[39m     \u001b[36mconst\u001b[39m homeButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"home-button\"]'\u001b[39m)\u001b[33m.\u001b[39mor(page\u001b[33m.\u001b[39mlocator(\u001b[32m'a[href=\"/\"]'\u001b[39m))\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 215 |\u001b[39m     \u001b[36mawait\u001b[39m homeButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 216 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m1000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 217 |\u001b[39m\n \u001b[90m 218 |\u001b[39m     \u001b[90m// Set slider to Balanced mode\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                            "column": 23,
-                            "line": 240
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 22,
+                            "line": 215
                           },
-                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  238 |     await page.waitForTimeout(500);\n  239 |     const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 240 |     await startButton.click();\n      |                       ^\n  241 |\n  242 |     // Wait for button to change to \"Processing...\"\n  243 |     await page.waitForSelector('button:has-text(\"Processing\")', { timeout: 2000 }).catch(() => {});\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:240:23"
+                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"home-button\"]').or(locator('a[href=\"/\"]')).first()\u001b[22m\n\n\n  213 |     // Navigate back to home\n  214 |     const homeButton = await page.locator('[data-testid=\"home-button\"]').or(page.locator('a[href=\"/\"]')).first();\n> 215 |     await homeButton.click();\n      |                      ^\n  216 |     await page.waitForTimeout(1000);\n  217 |\n  218 |     // Set slider to Balanced mode\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:215:22"
                         }
                       ],
                       "stdout": [
@@ -1277,24 +1520,24 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:19:04.907Z",
+                      "startTime": "2025-11-19T15:53:49.139Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-ebaee-de-Presidio-GLiNER-Italian--electron\\test-failed-1.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-ebaee-de-Presidio-GLiNER-Italian--electron\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-ebaee-de-Presidio-GLiNER-Italian--electron\\error-context.md"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-ebaee-de-Presidio-GLiNER-Italian--electron\\error-context.md"
                         }
                       ],
                       "errorLocation": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                        "column": 23,
-                        "line": 240
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 22,
+                        "line": 215
                       }
                     }
                   ],
@@ -1319,28 +1562,28 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 4,
+                      "workerIndex": 11,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 32220,
+                      "duration": 30036,
                       "error": {
-                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:291:23",
+                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"home-button\"]').first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"home-button\"]').first()\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:266:22",
                         "location": {
-                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                          "column": 23,
-                          "line": 291
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 22,
+                          "line": 266
                         },
-                        "snippet": "\u001b[0m \u001b[90m 289 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 290 |\u001b[39m     \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 291 |\u001b[39m     \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 292 |\u001b[39m\n \u001b[90m 293 |\u001b[39m     \u001b[90m// Wait for button to change to \"Processing...\"\u001b[39m\n \u001b[90m 294 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'button:has-text(\"Processing\")'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 264 |\u001b[39m     \u001b[90m// Navigate back to home\u001b[39m\n \u001b[90m 265 |\u001b[39m     \u001b[36mconst\u001b[39m homeButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"home-button\"]'\u001b[39m)\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 266 |\u001b[39m     \u001b[36mawait\u001b[39m homeButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 267 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m1000\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 268 |\u001b[39m\n \u001b[90m 269 |\u001b[39m     \u001b[90m// Set slider to Thorough mode\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                            "column": 23,
-                            "line": 291
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 22,
+                            "line": 266
                           },
-                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  289 |     await page.waitForTimeout(500);\n  290 |     const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 291 |     await startButton.click();\n      |                       ^\n  292 |\n  293 |     // Wait for button to change to \"Processing...\"\n  294 |     await page.waitForSelector('button:has-text(\"Processing\")', { timeout: 2000 }).catch(() => {});\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:291:23"
+                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"home-button\"]').first()\u001b[22m\n\n\n  264 |     // Navigate back to home\n  265 |     const homeButton = await page.locator('[data-testid=\"home-button\"]').first();\n> 266 |     await homeButton.click();\n      |                      ^\n  267 |     await page.waitForTimeout(1000);\n  268 |\n  269 |     // Set slider to Thorough mode\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:266:22"
                         }
                       ],
                       "stdout": [
@@ -1350,24 +1593,24 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:19:42.903Z",
+                      "startTime": "2025-11-19T15:54:24.338Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-d1416-h-Thorough-mode-All-models--electron\\test-failed-1.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-d1416-h-Thorough-mode-All-models--electron\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-d1416-h-Thorough-mode-All-models--electron\\error-context.md"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-d1416-h-Thorough-mode-All-models--electron\\error-context.md"
                         }
                       ],
                       "errorLocation": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                        "column": 23,
-                        "line": 291
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 22,
+                        "line": 266
                       }
                     }
                   ],
@@ -1398,7 +1641,7 @@
                     {
                       "type": "skip",
                       "location": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
                         "line": 326,
                         "column": 12
                       }
@@ -1409,10 +1652,10 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 56,
+                      "duration": 75,
                       "errors": [],
                       "stdout": [
                         {
@@ -1421,12 +1664,12 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:20:19.758Z",
+                      "startTime": "2025-11-19T15:54:58.752Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
                             "line": 326,
                             "column": 12
                           }
@@ -1456,10 +1699,10 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 13,
+                      "duration": 19,
                       "errors": [],
                       "stdout": [],
                       "stderr": [
@@ -1468,7 +1711,7 @@
                         }
                       ],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:20:21.819Z",
+                      "startTime": "2025-11-19T15:55:00.807Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1502,51 +1745,51 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 5,
+                      "workerIndex": 12,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 31641,
+                      "duration": 30033,
                       "error": {
-                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:401:23",
+                        "message": "TimeoutError: locator.setInputFiles: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"file\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.setInputFiles: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"file\"]')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:396:5",
                         "location": {
-                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                          "column": 23,
-                          "line": 401
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 5,
+                          "line": 396
                         },
-                        "snippet": "\u001b[0m \u001b[90m 399 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 400 |\u001b[39m     \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 401 |\u001b[39m     \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 402 |\u001b[39m\n \u001b[90m 403 |\u001b[39m     \u001b[90m// Wait for button to change to \"Processing...\"\u001b[39m\n \u001b[90m 404 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'button:has-text(\"Processing\")'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 394 |\u001b[39m     \u001b[90m// Process document\u001b[39m\n \u001b[90m 395 |\u001b[39m     \u001b[36mconst\u001b[39m fileInput \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"file\"]'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 396 |\u001b[39m     \u001b[36mawait\u001b[39m fileInput\u001b[33m.\u001b[39msetInputFiles(testFilePath)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 397 |\u001b[39m\n \u001b[90m 398 |\u001b[39m     \u001b[90m// Wait for file to be selected and click Start button\u001b[39m\n \u001b[90m 399 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                            "column": 23,
-                            "line": 401
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 5,
+                            "line": 396
                           },
-                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  399 |     await page.waitForTimeout(500);\n  400 |     const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 401 |     await startButton.click();\n      |                       ^\n  402 |\n  403 |     // Wait for button to change to \"Processing...\"\n  404 |     await page.waitForSelector('button:has-text(\"Processing\")', { timeout: 2000 }).catch(() => {});\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:401:23"
+                          "message": "TimeoutError: locator.setInputFiles: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"file\"]')\u001b[22m\n\n\n  394 |     // Process document\n  395 |     const fileInput = await page.locator('input[type=\"file\"]');\n> 396 |     await fileInput.setInputFiles(testFilePath);\n      |     ^\n  397 |\n  398 |     // Wait for file to be selected and click Start button\n  399 |     await page.waitForTimeout(500);\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:396:5"
                         }
                       ],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:20:21.856Z",
+                      "startTime": "2025-11-19T15:55:00.867Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-b9aa7-vailable-Presidio-fallback--electron\\test-failed-1.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-b9aa7-vailable-Presidio-fallback--electron\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-b9aa7-vailable-Presidio-fallback--electron\\error-context.md"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-b9aa7-vailable-Presidio-fallback--electron\\error-context.md"
                         }
                       ],
                       "errorLocation": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                        "column": 23,
-                        "line": 401
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 5,
+                        "line": 396
                       }
                     }
                   ],
@@ -1579,28 +1822,28 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 6,
+                      "workerIndex": 13,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 32288,
+                      "duration": 30074,
                       "error": {
-                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:477:25",
+                        "message": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"]').or(locator('input[type=\"range\"]')).first()\u001b[22m\n",
+                        "stack": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"]').or(locator('input[type=\"range\"]')).first()\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:464:25",
                         "location": {
-                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
                           "column": 25,
-                          "line": 477
+                          "line": 464
                         },
-                        "snippet": "\u001b[0m \u001b[90m 475 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 476 |\u001b[39m       \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 477 |\u001b[39m       \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 478 |\u001b[39m\n \u001b[90m 479 |\u001b[39m       \u001b[90m// Wait for button to change to \"Processing...\"\u001b[39m\n \u001b[90m 480 |\u001b[39m       \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'button:has-text(\"Processing\")'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m2000\u001b[39m })\u001b[33m.\u001b[39m\u001b[36mcatch\u001b[39m(() \u001b[33m=>\u001b[39m {})\u001b[33m;\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 462 |\u001b[39m       \u001b[90m// Set slider\u001b[39m\n \u001b[90m 463 |\u001b[39m       \u001b[36mconst\u001b[39m depthSlider \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'[data-testid=\"depth-slider\"]'\u001b[39m)\u001b[33m.\u001b[39mor(page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"range\"]'\u001b[39m))\u001b[33m.\u001b[39mfirst()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 464 |\u001b[39m       \u001b[36mawait\u001b[39m depthSlider\u001b[33m.\u001b[39mevaluate((el\u001b[33m:\u001b[39m \u001b[33mHTMLInputElement\u001b[39m\u001b[33m,\u001b[39m val\u001b[33m:\u001b[39m number) \u001b[33m=>\u001b[39m {\n \u001b[90m     |\u001b[39m                         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 465 |\u001b[39m         el\u001b[33m.\u001b[39mvalue \u001b[33m=\u001b[39m val\u001b[33m.\u001b[39mtoString()\u001b[33m;\u001b[39m\n \u001b[90m 466 |\u001b[39m         el\u001b[33m.\u001b[39mdispatchEvent(\u001b[36mnew\u001b[39m \u001b[33mEvent\u001b[39m(\u001b[32m'change'\u001b[39m\u001b[33m,\u001b[39m { bubbles\u001b[33m:\u001b[39m \u001b[36mtrue\u001b[39m }))\u001b[33m;\u001b[39m\n \u001b[90m 467 |\u001b[39m       }\u001b[33m,\u001b[39m mode\u001b[33m.\u001b[39mvalue)\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
                             "column": 25,
-                            "line": 477
+                            "line": 464
                           },
-                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  475 |       await page.waitForTimeout(500);\n  476 |       const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 477 |       await startButton.click();\n      |                         ^\n  478 |\n  479 |       // Wait for button to change to \"Processing...\"\n  480 |       await page.waitForSelector('button:has-text(\"Processing\")', { timeout: 2000 }).catch(() => {});\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:477:25"
+                          "message": "TimeoutError: locator.evaluate: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('[data-testid=\"depth-slider\"]').or(locator('input[type=\"range\"]')).first()\u001b[22m\n\n\n  462 |       // Set slider\n  463 |       const depthSlider = await page.locator('[data-testid=\"depth-slider\"]').or(page.locator('input[type=\"range\"]')).first();\n> 464 |       await depthSlider.evaluate((el: HTMLInputElement, val: number) => {\n      |                         ^\n  465 |         el.value = val.toString();\n  466 |         el.dispatchEvent(new Event('change', { bubbles: true }));\n  467 |       }, mode.value);\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:464:25"
                         }
                       ],
                       "stdout": [
@@ -1610,24 +1853,24 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:20:56.832Z",
+                      "startTime": "2025-11-19T15:55:33.638Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-0f0c1-ocessing-time-for-each-mode-electron\\test-failed-1.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-0f0c1-ocessing-time-for-each-mode-electron\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-0f0c1-ocessing-time-for-each-mode-electron\\error-context.md"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-0f0c1-ocessing-time-for-each-mode-electron\\error-context.md"
                         }
                       ],
                       "errorLocation": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
                         "column": 25,
-                        "line": 477
+                        "line": 464
                       }
                     }
                   ],
@@ -1652,28 +1895,28 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 7,
+                      "workerIndex": 14,
                       "parallelIndex": 0,
                       "status": "failed",
-                      "duration": 31694,
+                      "duration": 30107,
                       "error": {
-                        "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n",
-                        "stack": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:553:23",
+                        "message": "TimeoutError: locator.setInputFiles: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"file\"]')\u001b[22m\n",
+                        "stack": "TimeoutError: locator.setInputFiles: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"file\"]')\u001b[22m\n\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:548:5",
                         "location": {
-                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                          "column": 23,
-                          "line": 553
+                          "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                          "column": 5,
+                          "line": 548
                         },
-                        "snippet": "\u001b[0m \u001b[90m 551 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 552 |\u001b[39m     \u001b[36mconst\u001b[39m startButton \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'button:has-text(\"Start PII Detection\")'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 553 |\u001b[39m     \u001b[36mawait\u001b[39m startButton\u001b[33m.\u001b[39mclick()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 554 |\u001b[39m\n \u001b[90m 555 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForSelector(\u001b[32m'text=Review detected PII'\u001b[39m\u001b[33m,\u001b[39m { timeout\u001b[33m:\u001b[39m \u001b[35m120000\u001b[39m })\u001b[33m;\u001b[39m\n \u001b[90m 556 |\u001b[39m\u001b[0m"
+                        "snippet": "\u001b[0m \u001b[90m 546 |\u001b[39m\n \u001b[90m 547 |\u001b[39m     \u001b[36mconst\u001b[39m fileInput \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'input[type=\"file\"]'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 548 |\u001b[39m     \u001b[36mawait\u001b[39m fileInput\u001b[33m.\u001b[39msetInputFiles(testFilePath)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 549 |\u001b[39m\n \u001b[90m 550 |\u001b[39m     \u001b[90m// Wait for file to be selected and click Start button\u001b[39m\n \u001b[90m 551 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mwaitForTimeout(\u001b[35m500\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
                       },
                       "errors": [
                         {
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                            "column": 23,
-                            "line": 553
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "column": 5,
+                            "line": 548
                           },
-                          "message": "TimeoutError: locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('button:has-text(\"Start PII Detection\")')\u001b[22m\n\n\n  551 |     await page.waitForTimeout(500);\n  552 |     const startButton = await page.locator('button:has-text(\"Start PII Detection\")');\n> 553 |     await startButton.click();\n      |                       ^\n  554 |\n  555 |     await page.waitForSelector('text=Review detected PII', { timeout: 120000 });\n  556 |\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts:553:23"
+                          "message": "TimeoutError: locator.setInputFiles: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('input[type=\"file\"]')\u001b[22m\n\n\n  546 |\n  547 |     const fileInput = await page.locator('input[type=\"file\"]');\n> 548 |     await fileInput.setInputFiles(testFilePath);\n      |     ^\n  549 |\n  550 |     // Wait for file to be selected and click Start button\n  551 |     await page.waitForTimeout(500);\n    at C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts:548:5"
                         }
                       ],
                       "stdout": [
@@ -1683,24 +1926,24 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:21:34.213Z",
+                      "startTime": "2025-11-19T15:56:08.310Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "screenshot",
                           "contentType": "image/png",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-f25cf-ory-usage-during-processing-electron\\test-failed-1.png"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-f25cf-ory-usage-during-processing-electron\\test-failed-1.png"
                         },
                         {
                           "name": "error-context",
                           "contentType": "text/markdown",
-                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\test-results\\gliner-detection.e2e.ts-GL-f25cf-ory-usage-during-processing-electron\\error-context.md"
+                          "path": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\test-results\\gliner-detection.e2e.ts-GL-f25cf-ory-usage-during-processing-electron\\error-context.md"
                         }
                       ],
                       "errorLocation": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
-                        "column": 23,
-                        "line": 553
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "column": 5,
+                        "line": 548
                       }
                     }
                   ],
@@ -1731,7 +1974,7 @@
                     {
                       "type": "skip",
                       "location": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
                         "line": 584,
                         "column": 12
                       }
@@ -1742,10 +1985,10 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 15,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 59,
+                      "duration": 99,
                       "errors": [],
                       "stdout": [
                         {
@@ -1754,12 +1997,12 @@
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:22:10.592Z",
+                      "startTime": "2025-11-19T15:56:43.371Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
                             "line": 584,
                             "column": 12
                           }
@@ -1787,7 +2030,7 @@
                     {
                       "type": "skip",
                       "location": {
-                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                        "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
                         "line": 619,
                         "column": 12
                       }
@@ -1798,20 +2041,20 @@
                   "projectName": "electron",
                   "results": [
                     {
-                      "workerIndex": 8,
+                      "workerIndex": 15,
                       "parallelIndex": 0,
                       "status": "skipped",
-                      "duration": 12,
+                      "duration": 17,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2025-11-14T16:22:12.386Z",
+                      "startTime": "2025-11-19T15:56:45.570Z",
                       "annotations": [
                         {
                           "type": "skip",
                           "location": {
-                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\codicecivileai\\desktop\\e2e\\gliner-detection.e2e.ts",
+                            "file": "C:\\Users\\tucan\\Documents\\stefano\\hackaton\\huggingface_gradio\\redax_hackaton_submission\\desktop\\e2e\\gliner-detection.e2e.ts",
                             "line": 619,
                             "column": 12
                           }
@@ -1835,11 +2078,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-11-14T16:17:20.968Z",
-    "duration": 292101.28300000005,
-    "expected": 20,
+    "startTime": "2025-11-19T15:50:27.857Z",
+    "duration": 378854.81100000005,
+    "expected": 13,
     "skipped": 6,
-    "unexpected": 8,
+    "unexpected": 15,
     "flaky": 0
   }
 }
