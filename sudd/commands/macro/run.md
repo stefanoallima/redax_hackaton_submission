@@ -1,5 +1,5 @@
 ---
-name: sudd:run
+name: sudd-run
 description: Full autonomous SUDD workflow — from vision to done
 phase: all
 macro: true
@@ -8,10 +8,10 @@ macro: true
 Full autonomous SUDD workflow. Runs the complete loop from vision to done.
 
 **Input**: 
-- `/sudd:run` — continue with current state
-- `/sudd:run green "description"` — start fresh from vision (heavy research)
-- `/sudd:run brown` — continue existing work (light discovery)
-- `/sudd:run {change-id}` — work on specific change
+- `/sudd-run` — continue with current state
+- `/sudd-run green "description"` — start fresh from vision (heavy research)
+- `/sudd-run brown` — continue existing work (light discovery)
+- `/sudd-run {change-id}` — work on specific change
 
 ---
 
@@ -20,6 +20,95 @@ Agent invocation follows `sudd/standards.md` → Agent Invocation.
 ---
 
 ## ORCHESTRATOR STARTUP
+
+0-first. **Session-start handoff read** (v3.8.23):
+   - Read `sudd/CURRENT_STATE.md` if present. It is a pre-baked,
+     link-dense snapshot of `active`, `stuck`, `just shipped`,
+     `inbox`, `next up`, and `trajectory vs vision`. Use it as the
+     primary source for "what's going on right now" INSTEAD of
+     re-exploring `changes/active/`, parsing `state.json`, or
+     re-reading archive SUMMARYs.
+   - Tolerate missing file — when absent, fall through to legacy
+     exploration below.
+   - Trust contract: every section except `## TL;DR` and
+     `## Trajectory vs Vision` is pure extraction from the filesystem
+     at the last refresh; links match on-disk paths. The
+     `<!-- refreshed-at: ... -->` header at the top carries the
+     refresh timestamp. If it's hours old, re-verify against the
+     filesystem before acting on it.
+
+0a. **Framework priority check** (v3.8.13):
+   - Read `AGENTS.md` and `sudd/AGENTS-SUDD.md` at session start
+   - **Default: SUDD is the canonical change framework for this repo.**
+   - For any new change request ("build X", "fix Y", "add Z"), use SUDD, NOT:
+     - openspec-* skills (create artifacts in `openspec/changes/`)
+     - superpowers brainstorming/plans (create artifacts in `docs/superpowers/`)
+     - feature-dev skills (fragment into `.planning/`)
+     - bmad (`_bmad/`, `_bmad-output/`)
+   - **Exception:** user explicitly names another framework ("use openspec", "brainstorm with superpowers", types `/openspec-new-change` directly). Respect that.
+   - **Exception:** already-in-flight foreign change. Continue it there; next `sudd auto` will port on completion.
+   - Merely having openspec/superpowers skills loaded is NOT an opt-out signal.
+
+0b. **Ensure vision exists** (v3.8.12):
+   - Read `sudd/vision.md`
+   - If empty or missing:
+     - Read the repo: `README.md`, `PROJECT_REPORT.md`, `AGENTS.md`, `package.json` description, top-level `*.md` files, `src/` structure
+     - Synthesize a vision covering: what the project is, who it's for, key objectives, constraints
+     - Write `sudd/vision.md` with the synthesis (30-80 lines, real content not placeholder)
+     - Log: `"auto-generated vision.md from repo content — review before next session"`
+   - If populated: use as-is, never overwrite
+   - This guards against the v3.8.x wipe bug that left repos with empty vision.md and hid project purpose from the orchestrator
+
+0c. **Ensure AGENTS.md is project-specific** (v3.8.13):
+   - Read `AGENTS.md` at the repo root
+   - If it contains `{{PLACEHOLDERS}}` like `{{PROJECT_NAME}}`, `{{PROJECT_PURPOSE}}`, `{{REPO_CONVENTIONS}}`, `{{KEY_FILES}}`:
+     - Synthesize from the repo (same sources as vision): `README.md`, `PROJECT_REPORT.md`, top-level source tree, `package.json`, etc.
+     - Fill placeholders with real content
+     - `{{PROJECT_NAME}}`: repo name
+     - `{{PROJECT_PURPOSE}}`: 2-4 sentences on what this project is and who it serves
+     - `{{REPO_CONVENTIONS}}`: coding style, directory taboos, teammates' preferences, anything that would be non-obvious to a fresh AI agent
+     - `{{KEY_FILES}}`: paths that actually matter in THIS repo
+     - Log: `"auto-filled AGENTS.md from repo content — review and refine"`
+   - If AGENTS.md has no placeholders, it's user-customized — use as-is, never overwrite
+   - If AGENTS.md matches known 1251-byte pre-v3.8.13 SUDD-stub: `sudd update` heals it to a fresh placeholder template before this step runs
+
+0d. **Promote inbox → active** (v3.8.13, mechanized in v3.8.15):
+   - Only runs in `green` mode (to avoid disrupting brown continuation)
+   - Check `sudd/changes/inbox/` for ported proposals awaiting review
+   - If inbox is empty: skip
+   - Otherwise:
+     - Run `sudd promote` (mechanical part): allocates next numeric SUDD id, moves inbox/{id}/ → active/NNN_{id}/, writes `EnrichmentHints.json` in each promoted change listing which fields need AI fill-in
+     - For each active change that has an `EnrichmentHints.json`:
+       - Read the hints (lists `needs_fields` like persona, priority, acceptance_criteria, size)
+       - Read `proposal.md` and `PORT_NOTES.md` for context
+       - Fill in missing fields at the top of `proposal.md` using SUDD's schema: `**ID:**`, `**Size:**`, `**Persona:**`, `**Priority:**`, and `## Acceptance Criteria` section
+       - Persona: pick from `sudd/personas/` whose profile matches the change's users (run `/sudd-plan` with persona focus if unsure)
+       - Priority: 1 (urgent/blocker), 2 (important), 3 (nice-to-have) based on vision.md alignment
+       - Size: S (≤2 files), M (3-6 files), L (>6 files or cross-cutting)
+       - Acceptance Criteria: 3-5 testable outcomes derived from proposal content
+       - Once filled, `rm EnrichmentHints.json` (work is done)
+       - **v3.8.18 — Per-change persona enrichment** (AC #6):
+         - If `sudd/changes/active/{id}/personas/` does NOT yet exist or contains only the default template file:
+           - Dispatch(agent=persona-detector, scope=change): reads proposal.md + specs.md (if present) and writes 1–3 consumer stubs into `active/{id}/personas/`.
+           - Dispatch(agent=persona-researcher, scope=change): enriches each stub through the 7-phase workflow (profile → usage → pain points → mental model → success criteria → failure modes → validation checklist).
+         - If `active/{id}/personas/` already has ≥1 non-template persona: skip (do not overwrite user-curated personas).
+         - Rationale: promoted changes must enter the queue with populated personas so the build loop has real consumers for micro-persona generation, not a default fallback.
+     - Log: `"promoted {n} inbox change(s), enriched {m}, persona-enriched {p}"`
+   - The `sudd-run` subprocess is the right layer for enrichment (has AI); `sudd promote` is the right layer for mechanical file moves (Go)
+
+0e. **Top-level persona auto-synthesis** (v3.8.18, AC #1, #4):
+   - Purpose: a repo with only `sudd/personas/default.md` (the factory template) produces shallow gate validation because every consumer falls back to the generic persona. Synthesize 2–3 real personas from repo content so validation actually reflects real users.
+   - Trigger: run only when the Go helper `installer.PersonasAreDefaultOnly(target)` returns true. That helper is true iff:
+     - `sudd/personas/` is missing or empty, OR
+     - every `.md` file in `sudd/personas/` is byte-identical to the embedded template, OR has < 50 bytes (wiped).
+   - Check also surfaces in `sudd doctor` as the `Personas` row (Unverifiable warn when default-only, Pass when ≥2 enriched).
+   - If trigger fires:
+     - Read repo signals: `README.md`, `sudd/vision.md`, top-level user-facing code (e.g., `package.json` description, public API handlers, CLI command surfaces).
+     - Dispatch(agent=persona-researcher, scope=repo, mode=synthesize):
+       - Input: the repo signals above + a request to produce 2–3 personas representing the most likely end-consumers.
+       - Output: writes 2–3 new persona files into `sudd/personas/{name}.md` (kebab-case, e.g., `backend-integrator.md`, `ops-lead.md`).
+     - Preserve rule: the agent MUST NOT overwrite any existing persona file unless it is byte-identical to the template or has < 50 bytes. User-customized files survive.
+   - If trigger does not fire: skip silently.
 
 1. **Load state**: Read `sudd/state.json`
 2. **Determine mode**:
@@ -43,7 +132,7 @@ Agent invocation follows `sudd/standards.md` → Agent Invocation.
    - Determines dispatch syntax for all agent invocations this session
    - Reference: `sudd/cli-adapter.md` for CLI-specific syntax
    - If missing: infer from environment (which CLI am I running inside?)
-   - Skill invocation format: claude/crush use `/sudd:run`, opencode uses `/sudd-run`
+   - Skill invocation format: claude/crush use `/sudd-run`, opencode uses `/sudd-run`
 5c. **Check for checkpoint**: If `sudd/changes/active/{id}/checkpoint.json` exists:
    → Load checkpoint state
    → Skip completed tasks
@@ -66,7 +155,7 @@ Search: codebase for related patterns
 
 If vision.md is empty or vague:
   → Ask user for clarification (ONE question, then proceed)
-  → Or use /sudd:chat to explore first
+  → Or use /sudd-chat to explore first
 ```
 
 ### Step 2: Discovery-Driven Change Generation (v3.4)
@@ -76,7 +165,7 @@ work that needs doing. This replaces the old single-change approach.
 
 ```
 DISCOVERY CHECK:
-  Invoke /sudd:discover (follows staleness rules — may skip if recent)
+  Invoke /sudd-discover (follows staleness rules — may skip if recent)
 
   If discovery ran and generated proposals:
     → Multiple discovered_* proposals now exist in changes/active/
@@ -89,9 +178,10 @@ DISCOVERY CHECK:
     → If no: fall through to legacy single-change creation below
 
   LEGACY FALLBACK (no discovery results, no existing proposals):
-    Generate change-id: green_{name}_{seq:02d}
+    Generate change-id: {NNN}_green_{name}_{seq:02d}
+      - NNN: count all dirs in changes/active/ + changes/archive/ + changes/stuck/, then +1, zero-pad to 3 digits
       - name: kebab-case from vision content
-      - seq: next available number
+      - seq: next available number for this mode
 
     Create: sudd/changes/active/{change-id}/
       - proposal.md (from vision)
@@ -106,7 +196,7 @@ Update: sudd/state.json
   <!-- Phase transition: none → planning (valid) -->
 ```
 
-NOTE: When running inside /sudd:auto, the remaining discovered proposals
+NOTE: When running inside /sudd-auto, the remaining discovered proposals
 stay in the queue. After this change completes, auto processes the next one.
 
 ### Step 3: Research Agents (parallel)
@@ -122,6 +212,69 @@ Dispatch(agent=persona-detector, scope=change): Discover change-level consumers
 Dispatch(agent=persona-researcher, scope=change): Deep-research change consumers
   Write to: sudd/changes/active/{id}/personas/
 ```
+
+### Step 3b: Persona Early Validation (v3.7 — catch shallow personas before coding)
+
+**PREREQUISITE**: Step 3 MUST complete first (personas written to disk).
+Step 3b is SEQUENTIAL after Step 3, never parallel.
+
+Personas are the foundation of everything SUDD does. If they're vague, every
+subsequent step (design, code, testing, gate) builds on a bad foundation.
+Validate them NOW, before any code is written.
+
+```
+Ensure log.md exists (create if missing):
+  If sudd/changes/active/{id}/log.md does NOT exist:
+    Create it with header: "# Log: {change-id}\n\n"
+
+Verify personas exist: ls sudd/changes/active/{id}/personas/*.md
+If no personas found: SKIP Step 3b (Step 4 planning will still work, gate will catch gaps later)
+
+FOR EACH persona in sudd/changes/active/{id}/personas/:
+  Dispatch(agent=persona-validator, mode=persona-quality):
+
+    Read the persona file. Check ALL of these:
+
+    REQUIRED (fail if missing):
+    □ ## Identity section with: name, role, tech comfort, context
+    □ ## Objectives section with at least 1 concrete objective
+    □ Each objective has specific success criteria (not vague "works well")
+    □ ## Deal-Breakers section with at least 1 deal-breaker
+
+    QUALITY (flag if weak):
+    □ Objectives are MEASURABLE (can be verified by browser testing)
+    □ Deal-breakers are SPECIFIC (not "bad UX" — what specifically?)
+    □ Identity has enough detail for an LLM to act AS this person
+    □ No placeholder text ("TBD", "TODO", "fill in later")
+    □ ## Form Data section exists if persona will fill forms
+
+    Result:
+      PASS → persona is ready for design and coding
+      WEAK → specific feedback on what to strengthen
+      FAIL → missing required sections, cannot proceed
+
+  If ANY persona is FAIL:
+    Dispatch(agent=persona-researcher, mode=enrich):
+      Input: the persona file path AND the validation output from above
+      (pass the "Missing sections" and "Suggested enrichments" text from
+       persona-validator's output directly in the dispatch prompt)
+      Re-research the persona, fill missing sections, write updated file
+    Re-validate (max 2 enrichment attempts)
+
+  If ANY persona is WEAK after enrichment:
+    Log warning but continue — weak personas produce weak gates
+
+  OUTPUT: Write results to log.md under ## Persona Early Validation:
+    ### {persona_name}: PASS | WEAK | FAIL
+    {validation details}
+  
+  Update state.json: personas_validated = true
+```
+
+This step typically takes < 30 seconds. It prevents hours of wasted coding
+against poorly-defined personas.
+
+---
 
 ### Step 4: Planning
 <!-- Phase transition: inception → planning (valid) -->
@@ -153,10 +306,118 @@ Dispatch(agent=micro-persona-generator):
   Read: tasks.md, design.md, specs.md, codebase
   Write: sudd/changes/active/{id}/tasks/{task-id}/micro-persona.md (one per task)
   Process in reverse dependency order (leaf tasks first)
-
-Update: state.json phase = "build"
-<!-- Phase transition: planning → build (valid) -->
 ```
+
+---
+
+### Step 4b: Architecture Review Loop (v3.7 — catch design flaws before coding)
+
+Before writing any code, the design must survive peer review. This catches
+flawed architecture BEFORE burning retries on implementation.
+
+```
+ARCHITECTURE REVIEW (max 2 rounds):
+
+  Round 1:
+    Dispatch(agent=peer-reviewer, mode=design-review):
+      Input: design.md, specs.md, tasks.md, personas/*.md, codebase (existing patterns)
+      (The agent's design-review mode in peer-reviewer.md defines the full
+       10-point checklist. Do NOT duplicate the checklist here — the agent
+       file is the single source of truth for what to check.)
+
+      Output: ## Architecture Review section in log.md
+        - APPROVED: design is ready for implementation
+        - REVISE: specific issues with suggested fixes (max 5 items)
+
+  If REVISE:
+    Dispatch(agent=architect, mode=revision):
+      Input: design.md, log.md ## Architecture Review feedback
+      Action: revise design.md and tasks.md to address feedback
+      Note: do NOT add scope — only fix the identified issues
+
+    Round 2:
+      Dispatch(agent=peer-reviewer, mode=design-review):
+        Re-review revised design against original feedback
+        Output: APPROVED or REVISE
+
+    If still REVISE after Round 2:
+      Log: "⚠ Architecture review concerns remain. Proceeding with noted risks."
+      Append unresolved concerns to log.md ## Known Risks
+      Continue to Step 4c (don't block forever on design perfection)
+
+  If APPROVED:
+    Log: "✓ Architecture review passed"
+
+  Update state.json: architecture_reviewed = true
+
+  OUTPUT: All results go to log.md under ## Architecture Review:
+    ### Round 1: APPROVED | REVISE
+    {reviewer output}
+    ### Round 2 (if needed): APPROVED | REVISE
+    {reviewer output}
+    ### Known Risks (if unresolved after 2 rounds)
+    {unresolved concerns}
+```
+
+---
+
+### Step 4c: Design-Gate (v3.7 — lightweight persona check before coding)
+
+The design-gate is a FAST persona check on the design itself (not code).
+It catches misalignment between what personas need and what the design provides.
+
+```
+DESIGN-GATE:
+
+  FOR EACH persona in sudd/changes/active/{id}/personas/:
+    Dispatch(agent=persona-validator, mode=design-gate):
+      Input: persona file, design.md, specs.md, tasks.md
+
+      You are this persona. Walk through the DESIGN (not code — it doesn't exist yet).
+
+      For each of your objectives:
+        1. Is there a page/route/component designed for this objective?
+        2. Is there a task in tasks.md that implements this objective?
+        3. Does the API design support the data this objective needs?
+        4. Are your deal-breakers addressed in the design?
+        5. Would you be able to accomplish this objective with this design?
+
+      Score: 0-100 (design readiness, not code quality)
+        90+   → Design serves this persona well
+        70-89 → Design has gaps but can proceed (log gaps)
+        <70   → Design fundamentally misses this persona's needs
+
+      Output: ## Design-Gate section in log.md
+
+  If ANY persona < 70:
+    → Dispatch(agent=architect, mode=revision) with design-gate gaps
+    → If architect revised tasks.md:
+        Regenerate micro-personas for changed tasks:
+        Dispatch(agent=micro-persona-generator): only for tasks that changed
+    → Re-run design-gate (max 1 revision — don't loop forever)
+
+  If ALL personas >= 70:
+    → Log: "✓ Design-gate passed (min: {score}/100)"
+    → Proceed to build
+
+  OUTPUT: Write to log.md under ## Design-Gate:
+    ### {persona_name}: {score}/100 — PASS | FAIL
+    {objective coverage table}
+    {gaps found}
+
+  Update state.json:
+    design_gate_passed = true
+    design_gate_score = {min score across personas}
+    phase = "build"
+  <!-- Phase transition: planning → build (valid) -->
+```
+
+**IMPORTANT**: If Step 4b or 4c caused architect to revise tasks.md, micro-personas
+for affected tasks MUST be regenerated before proceeding to build. Stale
+micro-personas that don't match the revised design will cause false gate failures.
+
+This entire step (3b + 4b + 4c) adds ~2-5 minutes to the planning phase
+but saves hours of wasted coding against bad designs or weak personas.
 
 ### Step 5: Build Loop
 
@@ -267,7 +528,7 @@ DEFAULT MODE: SEQUENTIAL
           sudd_version, timestamp, phase, task_progress, current_task,
           squad_results_so_far, retry_counts, lessons_injected,
           accumulated_feedback, canary_passed, resume_instruction
-        Log: "Checkpoint saved. Session can resume with /sudd:run"
+        Log: "Checkpoint saved. Session can resume with /sudd-run"
 
   After all tasks in batch:
     Dispatch(agent=integration-reviewer, scope=change): cross-task integration check
@@ -328,7 +589,7 @@ This step runs as a **continuous loop** until PASS or STUCK. Do NOT stop and tel
 
 ```
 VALIDATION LOOP:
-  6a. TEST PHASE (inline /sudd:test logic):
+  6a. TEST PHASE (inline /sudd-test logic):
       - Detect test command (sudd.yaml or auto-detect)
       - Run all tests (unit, integration, coverage)
       - If tests fail:
@@ -347,21 +608,26 @@ VALIDATION LOOP:
 
   6b. REVIEW PHASE:
       Dispatch(agent=peer-reviewer): Final code review
-      Dispatch(agent=ux-tester): If UI components exist, browser test
 
-  6c. GATE PHASE (v3.1 — parallel dispatch):
-      PARALLEL (dispatch simultaneously):
-        Dispatch(agent=persona-validator):
-          Input: change persona + micro-persona results as evidence + macro-wiring report
-          Target: 98/100 EXEMPLARY
-        Dispatch(agent=persona-validator):
-          Input: repo persona + change persona results
-          Target: 98/100 EXEMPLARY
-        [If UI] Dispatch(agent=ux-tester):
-          Input: running UI, persona objectives, UI spec
+  6c. GATE PHASE (v3.4 — FULL gate.md, including browser testing):
 
-      WAIT for all, then:
-        Critical assessment (mandatory second pass, see gate.md STEP 3b)
+      **EXECUTE THE FULL gate.md WORKFLOW. DO NOT USE A SIMPLIFIED VERSION.**
+      The gate includes browser testing with persona-browser-agent — this is mandatory.
+
+      Follow gate.md steps IN ORDER:
+        Step 0:  Macro-wiring check
+        Step 1:  Identify consumers
+        Step 2a: Code intelligence extraction (code-analyzer pipeline + adversarial rubric)
+        Step 2b: BROWSER TESTING — run persona-test for each persona
+                 MANDATORY when personas exist AND a dev_server.url or deployed app is available.
+                 This launches a real browser, navigates the app AS each persona,
+                 and produces JSON reports + screenshots. DO NOT SKIP THIS STEP.
+                 DO NOT substitute it with LLM-based "persona simulation".
+        Step 2c: Persona-validator reads the browser reports (not code — the actual reports)
+        Step 2d: UX-tester spot-checks browser reports against screenshots
+        Step 2e: Unified scoring with formula from sudd.yaml
+        Step 3:  Aggregate scores
+        Step 3b: Critical assessment (mandatory second pass)
 
       If ALL consumers EXEMPLARY (>= 98/100):
         → GATE PASSED
@@ -369,12 +635,26 @@ VALIDATION LOOP:
       Else (ANY consumer below EXEMPLARY):
         → Log feedback to log.md (## Accumulated Feedback)
         → retry_count++ (per-task)
+        → If gate feedback indicates DESIGN FLAW (not just code bug):
+            Clear state.json: design_gate_passed = false
+            (Next retry or resume will re-run design-gate before coding)
         → If retry < 8: escalate tier per ladder, GO BACK TO Step 5c (re-apply with feedback)
         → If retry >= 8: mark STUCK, continue to 6d
 
-  6d. ARCHIVE PHASE (inline /sudd:done logic):
+  6d. ARCHIVE PHASE (inline /sudd-done logic):
       - If PASSED:
           → Step 2a: Dispatch(agent=learning-engine, mode=1): extract lessons to memory/lessons.md
+            The lesson heading MUST include the literal `{change-id}` so the
+            pre-archive assertion below can grep for it.
+          → **Pre-Archive Assertion (MANDATORY — DO NOT SKIP)**: run via Bash tool
+            `count=$(grep -c "{change-id}" sudd/memory/lessons.md 2>/dev/null || echo 0)`
+            - If count < 1: re-dispatch Step 2a. Max 2 retries.
+            - If still 0 after 2 retries: DO NOT `mv` to archive. Mark the change
+              STUCK with `reason="learning-pipeline-failure"` in STUCK.md and
+              stop — this is the silent-skip bug, not a transient failure.
+            - See done.md Step 2a for the full bash block and rationale.
+            - Canonical Go form: `auto.LessonRecorded(projectDir, changeID)`
+              in `sudd-go/internal/auto/learning.go`.
           → Step 2b: Dispatch(agent=learning-engine, mode=3): PATTERN PROMOTION (MANDATORY)
             - Scan ALL lessons, build tag frequency map
             - Promote patterns (3+ occurrences from different changes)
@@ -384,10 +664,30 @@ VALIDATION LOOP:
             - Index full log.md into sessions room for rich context preservation
             - Index lesson + new patterns into respective rooms
             - See done.md Step 2c for details
+          → **Step 2d: ENFORCE TASKS.MD CHECKBOX CLOSURE (MANDATORY)**: run via Bash tool
+            `unchecked=$(grep -c '^- \[ \]' sudd/changes/active/{id}/tasks.md 2>/dev/null || echo 0)`
+            - If unchecked > 0: STOP. Do NOT `mv` to archive/{id}_DONE.
+              Orchestrator must flip the boxes (if work is done) or route to STUCK
+              (if work is incomplete). See done.md Step 2d for the full bash block.
+            - Canonical Go form: `auto.TasksAllChecked(projectDir, changeID)`
+              in `sudd-go/internal/auto/tasks.go`.
+          → Emit SUMMARY.md into `active/{id}/` using the canonical 4-section
+            template (## What Changed / ## Why / ## Validation / ## Lessons).
+            Supplementary sections (Files Changed, Cost Summary) permitted.
+            Template lives in done.md Step 3 "### If DONE".
+          → **Step 2e: ENFORCE SUMMARY.md CANONICAL HEADINGS (MANDATORY)**: run via Bash tool
+            grep for each canonical heading (and its documented alias:
+            `Validation Results`, `Lessons Learned`) in the just-emitted file.
+            - If any heading missing: STOP. Do NOT `mv` to archive/{id}_DONE.
+              Re-emit from the canonical template. See done.md Step 2e.
+            - Canonical Go form: `auto.SummaryHasCanonicalHeadings(body)`
+              in `sudd-go/internal/auto/summary.go`.
           → Move to sudd/changes/archive/{change-id}_DONE/
-          → Create SUMMARY.md
       - If STUCK:
           → Step 2a: Dispatch(agent=learning-engine, mode=1): extract lessons (failures too)
+          → **Pre-Archive Assertion (MANDATORY)**: same grep-based check as
+            the DONE branch above — STUCK archives need the lesson too, so the
+            assertion fires here as well.
           → Step 2b: Dispatch(agent=learning-engine, mode=3): PATTERN PROMOTION (still runs)
           → Step 2c: INDEX SESSION IN MEMPALACE (if mempalace.enabled)
           → Move to sudd/changes/archive/{change-id}_STUCK/
@@ -417,7 +717,7 @@ If verification FAILS:
   → User decides whether to fix or ship
 ```
 
-**CRITICAL**: This entire step is autonomous. The orchestrator MUST NOT stop after tests pass and say "run /sudd:gate". It MUST NOT stop after gate passes and say "run /sudd:done". The loop runs continuously until the change is archived as DONE or STUCK.
+**CRITICAL**: This entire step is autonomous. The orchestrator MUST NOT stop after tests pass and say "run /sudd-gate". It MUST NOT stop after gate passes and say "run /sudd-done". The loop runs continuously until the change is archived as DONE or STUCK.
 
 ---
 
@@ -441,10 +741,19 @@ If no active change:
 ```
 Switch on phase:
   case "inception": → run planning   <!-- Phase transition: inception → planning (valid) -->
-  case "planning":  → continue design <!-- Phase transition: planning → build (valid) -->
+  case "planning":
+    → Check state.json flags:
+      If personas_validated != true AND personas exist → run Step 3b
+      If architecture_reviewed != true AND design.md exists → run Step 4b
+      If design_gate_passed != true AND design.md + personas exist → run Step 4c
+    → Then proceed to build
   case "build":     → continue tasks  <!-- Phase transition: build → validate (valid) -->
   case "validate":  → run validation  <!-- Phase transition: validate → complete (valid) -->
   case "complete":  → archive
+
+Note: State flags (personas_validated, architecture_reviewed, design_gate_passed)
+prevent re-running loops that already passed on resume. If a loop was interrupted,
+its flag won't be set and the loop re-runs safely.
 ```
 
 ### Step 3: Build Loop
@@ -522,7 +831,7 @@ Output:
 
 ## GUARDRAILS
 
-1. **Never ask user** unless scope is unclear or major decision needed
+1. **Never ask user** unless scope is unclear or major decision needed. When `SUDD_AUTONOMY=full` (set by `sudd auto`, reflecting `state.json → autonomy`), you MUST NOT stop to ask. Missing prereqs (empty tasks.md, missing personas, absent specs) must be generated autonomously — do NOT print Option A/B/C menus. Only stop when a countable outcome (DONE or STUCK) is reached or retries are exhausted.
 2. **Never skip validation squad** — every task gets contract → wiring → integration → micro-persona check
 3. **Never skip persona gate** — mandatory for completion
 4. **Always escalate on retry** — same tier won't magically succeed (per-task retry count)
@@ -535,3 +844,6 @@ Output:
 11. **Worktree mode only**: cleanup is mandatory — always remove worktrees after merge or conflict. Rebase before merge. Revert on post-merge validation failure
 12. **Per-task validation before proceeding** — validation squad (contract → wiring → integration → micro-persona) runs after every task. No task is "done" until PASS (100/100).
 13. **Context window management** — validation squad agents are lightweight (narrow scope). After each task, compress validation history to one line in state.json. If context window reaches 80% capacity, save state and continue in fresh session.
+14. **Never skip persona early validation** (Step 3b) — weak personas produce weak gates. Validate BEFORE design.
+15. **Never skip architecture review** (Step 4b) — catch design flaws before burning retries on bad architecture.
+16. **Never skip design-gate** (Step 4c) — if the design doesn't serve the personas, coding is wasted effort.

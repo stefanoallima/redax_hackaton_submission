@@ -1,0 +1,165 @@
+# sudd.yaml — SUDD v3.3
+# Central configuration for agent tiers, dispatch, and safeguards.
+
+tiers:
+  low:
+    model: glm-5.1
+    provider: zai-coding-plan
+    endpoint: "https://api.z.ai/api/coding/paas/v4"
+    cli: opencode
+  mid:
+    model: claude-sonnet-4-6
+    provider: anthropic
+    endpoint: ""
+    cli: claude-code
+  top:
+    model: claude-opus-4-6
+    provider: anthropic
+    endpoint: ""
+    cli: claude-code
+
+# Tier+1 rule (code-reviewer: always one tier above coder)
+tier_escalation:
+  low: mid
+  mid: top
+  top: top
+
+# Escalation ladder (floor-based, never downgrades)
+escalation:
+  ladder:
+    0-1:
+      default_floor: low
+    2-3:
+      default_floor: low
+      squad_floor: mid
+      code-reviewer_floor: mid
+    4-5:
+      default_floor: mid
+      code-reviewer_floor: top
+    6-7:
+      default_floor: top
+    8: stuck
+
+# Per-agent configuration (tier: low|mid|top|inline, context: curated|full)
+agents:
+  # Inline agents (orchestrator context, no process dispatch)
+  blocker-detector:         { tier: inline }
+  persona-detector:         { tier: inline }
+  persona-researcher:       { tier: inline }
+  context-manager:          { tier: inline }
+  monitor:                  { tier: inline }
+  learning-engine:          { tier: inline }
+  researcher:               { tier: inline }
+  antigravity:              { tier: inline }
+  ux-designer:              { tier: inline }
+
+  # Low tier (execution — GLM-5.1)
+  coder:                    { tier: low, context: curated }
+  contract-verifier:        { tier: low, context: curated }
+  wiring-checker:           { tier: low, context: curated }
+  code-analyzer-fe:         { tier: low, context: curated }
+  code-analyzer-be:         { tier: low, context: curated }
+  rubric-adversary:         { tier: low, context: curated }
+
+  # Mid tier (judgment + review)
+  qa:                       { tier: mid, context: curated }
+  code-reviewer:            { tier: mid, context: [curated, full] }
+  micro-persona-generator:  { tier: mid, context: full }
+  micro-persona-validator:  { tier: mid, context: full }
+  integration-reviewer:     { tier: mid, context: curated }
+  ux-reviewer:              { tier: mid, context: curated }
+  ux-tester:                { tier: mid, context: curated, cli_override: claude-code }
+  peer-reviewer:            { tier: mid, context: curated }
+  macro-wiring-checker:     { tier: mid, context: curated }
+  code-analyzer-reviewer:   { tier: mid, context: full }
+
+  # Top tier (critical decisions)
+  architect:                { tier: top, context: full }
+  solution-explorer:        { tier: top, context: full }
+  persona-validator:        { tier: top, context: full, cli_override: claude-code }
+  deep-think:               { tier: top, context: full }
+  decomposer:               { tier: top, context: full }
+  ux-architect:             { tier: top, context: full }
+  task-discoverer:          { tier: top, context: full }
+
+parallelization:
+  mode: sequential  # worktree mode not supported with process dispatch
+
+adaptive_planning:
+  small: 5
+  medium: 12
+  large: 13
+
+cost_mode: balanced
+
+token_budget:
+  per_task_max: 500000
+  per_change_max: 5000000
+  warning_threshold: 0.8
+
+time_budget:
+  per_task_max: 3600
+  per_change_max: 28800
+
+dispatch:
+  max_turns:
+    low: 15
+    mid: 25
+    top: 40
+  timeout_seconds:  # use --max-turns as primary guard on Windows
+    coder: 600
+    code-reviewer: 300
+    qa: 300
+    architect: 600
+    squad_agent: 180
+    ux-tester: 300
+    default: 300
+
+# Browser-Use (v3.3)
+browser_use:
+  enabled: true
+  provider: openrouter
+  model: google/gemini-2.5-flash
+  endpoint: "https://openrouter.ai/api/v1"
+  api_key_env: OPENROUTER_API_KEY
+  run_on:
+    per_task: true
+    gate: true
+  script: persona-browser-agent/persona_browser/cli.py
+  record_video: false
+  navigator:
+    max_steps: 50
+    timeout_seconds: 120
+    app_domains: []  # empty = auto-detect from url
+  rubric_threshold:
+    pb: 98
+    consumer: 98
+    verification: 100
+  scoring:
+    must_pass_weight: 1.0
+    should_pass_weight: 0.5
+    manifest_missing_penalty: 10
+    # experience_factor is INFORMATIONAL ONLY — included in report for human review,
+    # does NOT affect numerical score or PASS/FAIL (navigator satisfaction is LLM-fabricated)
+    network_error_penalty: 15
+    verification_fail_penalty: 20
+    spot_check_mismatch_penalty: 15
+  deal_breaker_policy: "instant_fail"
+  # Deal-breakers: silent API failures, auth handover failures,
+  # data loss between pages, 500 errors during normal user flow
+
+safety:
+  max_cost_per_change: 5.00
+  identical_failure_stuck_after: 3
+
+# Fully autonomous mode (sudd auto)
+auto:
+  max_hours: 8                    # session time limit
+  max_changes: 5                  # max changes per session
+  per_change_timeout_hours: 4     # kill runaway changes
+  stop_on_stuck: false            # continue after STUCK changes
+  priority_order: "oldest_first"  # oldest_first | newest_first
+  vision_last: true               # process vision.md only after all proposals
+  cli_override: ""                # empty = auto-detect from tiers.mid.cli
+  cli_flags: "--dangerously-skip-permissions --max-turns 200"    # flags passed to CLI agent subprocess
+  max_report_days: 30             # auto-delete reports older than this

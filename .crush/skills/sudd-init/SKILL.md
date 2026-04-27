@@ -4,12 +4,12 @@ description: "Initialize SUDD in a project. Use when setting up SUDD for the fir
 license: MIT
 metadata:
   author: sudd
-  version: "3.3"
+  version: "3.8.34"
 ---
 
 You are initializing SUDD2 in the current repository. This sets up the full autonomous development framework with 20 agents, memory system, and orchestrator commands.
 
-**Input**: Optional project description (e.g., `/sudd:init This is a FastAPI backend for consumer insights`)
+**Input**: Optional project description (e.g., `/sudd-init This is a FastAPI backend for consumer insights`)
 
 ---
 
@@ -18,7 +18,7 @@ You are initializing SUDD2 in the current repository. This sets up the full auto
 Look for `agents/` folder and `.claude/commands/sudd/run.md`. If both exist:
 ```
 SUDD2 already initialized in this repo.
-Run /sudd:run to start processing tasks.
+Run /sudd-run to start processing tasks.
 ```
 Stop here.
 
@@ -63,7 +63,7 @@ Create each of the following agent `.md` files in `agents/`. Each file contains 
 11. `agents/qa.md`
 
 ### Validation
-12. `agents/handoff-validator.md`
+12. `agents/integration-reviewer.md`
 13. `agents/contract-verifier.md`
 14. `agents/peer-reviewer.md`
 15. `agents/persona-validator.md`
@@ -97,7 +97,7 @@ This file is updated automatically after each task. Agents read it to avoid repe
 
 ---
 
-(No lessons yet — run `/sudd:run` to start building history)
+(No lessons yet — run `/sudd-run` to start building history)
 ```
 
 Write `memory/patterns.md`:
@@ -115,20 +115,18 @@ Patterns are lessons that appear 3+ times. Automatically promoted from `lessons.
 (No patterns detected yet)
 ```
 
-Write `memory/session-log.md`:
+Write `memory/session-log.md` (retired — pointer only):
 ```markdown
-# SUDD2 Session Log
+# SUDD2 Session Log — RETIRED
 
-Health reports from the monitor agent. Most recent first.
-
----
-
-(No sessions yet)
+Auto-session history lives in `sudd/auto-reports/{YYYY-MM-DD}/summary.md`
+and `sudd/state.json.auto_session`. This file is retained only as a
+pointer and is no longer written to.
 ```
 
 Create directory `memory/stuck-history/` and write `memory/stuck-history/.gitkeep`:
 ```
-# Stuck task histories are saved here by /sudd:done for STUCK changes.
+# Stuck task histories are saved here by /sudd-done for STUCK changes.
 # Each file: {change-id}.md with full feedback history and rollback commands.
 ```
 
@@ -165,7 +163,7 @@ If mempalace.enabled:
   2. If NOT installed:
      Log: "⚠ MemPalace not installed. Semantic learning disabled."
      Log: "  Install: pip install mempalace"
-     Log: "  Then re-run /sudd:init to complete setup."
+     Log: "  Then re-run /sudd-init to complete setup."
      (Continue init — MemPalace is optional)
 
   3. If installed:
@@ -234,7 +232,7 @@ Write `changes/active/example_getting-started_01/proposal.md`:
 active
 
 ## What
-This is a placeholder change. Delete this directory and create real changes with `/sudd:new`, or let the task-discoverer agent generate them.
+This is a placeholder change. Delete this directory and create real changes with `/sudd-new`, or let the task-discoverer agent generate them.
 
 ## Why
 Example for getting started with SUDD.
@@ -265,7 +263,7 @@ Add this block:
 
 This project uses SUDD for autonomous AI-driven development.
 
-**Commands:** `/sudd:run`, `/sudd:new`, `/sudd:plan`, `/sudd:apply`, `/sudd:test`, `/sudd:gate`, `/sudd:done`, `/sudd:status`, `/sudd:chat`
+**Commands:** `/sudd-run`, `/sudd-new`, `/sudd-plan`, `/sudd-apply`, `/sudd-test`, `/sudd-gate`, `/sudd-done`, `/sudd-status`, `/sudd-chat`
 
 **Key paths:** `sudd/vision.md` (what we build), `sudd/agents/` (agent instructions), `sudd/personas/` (who we build for), `sudd/standards.md` (rules + schemas)
 
@@ -275,7 +273,38 @@ The CLI agent is the orchestrator. Agents are markdown instructions. Code is onl
 
 ---
 
-## Step 8: Initialize git (if not already)
+## Step 8: Install persona-browser-agent (REQUIRED for browser testing)
+
+persona-browser-agent provides real browser-based persona testing. Without it, gate
+validation falls back to static code analysis which misses real UX issues.
+
+```bash
+# Check if already installed:
+persona-test --help 2>/dev/null && echo "INSTALLED" || echo "NOT_INSTALLED"
+
+# If NOT_INSTALLED:
+# Option 1: Install from sibling repo (if cloned alongside this project)
+pip install -e ../persona-browser-agent && playwright install chromium
+
+# Option 2: Install from git
+pip install git+https://github.com/stefanoallima/persona-browser-agent.git
+playwright install chromium
+
+# Verify:
+persona-test --help
+# Should show: "Persona Browser Agent — AI-driven browser testing as simulated personas"
+
+# Set API key for browser testing LLM (Gemini Flash via OpenRouter):
+# Add to your shell profile (~/.bashrc, ~/.zshrc, or Windows env vars):
+export OPENROUTER_API_KEY="sk-or-..."
+```
+
+If the Go CLI (`sudd init`) is used, it will auto-detect and install persona-browser-agent
+from a sibling directory automatically.
+
+---
+
+## Step 9: Initialize git (if not already)
 
 If `.git/` doesn't exist: `git init`
 
@@ -286,7 +315,7 @@ memory/context-cache/
 
 ---
 
-## Step 9: Verify and report
+## Step 10: Verify and report
 
 Count files created. Print:
 
@@ -296,12 +325,12 @@ SUDD2 INITIALIZED
 Agents:    20 (in agents/)
 Personas:  1 default (in personas/)
 Changes:   1 example (in changes/active/)
-Memory:    3 files (lessons, patterns, session-log)
-Commands:  /sudd:run, /sudd:add-task, /sudd:status
+Memory:    2 files (lessons, patterns) — session history in auto-reports/
+Commands:  /sudd-run, /sudd-add-task, /sudd-status
 
 Next steps:
-  1. Add tasks:     /sudd:add-task
-  2. Run session:   /sudd:run
-  3. Check status:  /sudd:status
+  1. Add tasks:     /sudd-add-task
+  2. Run session:   /sudd-run
+  3. Check status:  /sudd-status
 ══════════════════
 ```
